@@ -2,8 +2,11 @@
 
 + [Anaconda](#Anaconda)
 + [Jupyter](#Jupyter)
++ [编辑器](#编辑器)
 
 ## Anaconda
+
+![](https://www.anaconda.com/wp-content/uploads/2018/06/cropped-Anaconda_horizontal_RGB-1-600x102.png)
 
 Anaconda 提供了一个跨平台的 Python 发行版以及
 通用的软件、软件包依赖管理系统，非常适合于生物信息软件的管理。
@@ -86,6 +89,22 @@ conda env list
 conda activate jcbio
 ```
 
+#### 添加 channels
+
+conda 允许用户安装来自不同的 源(source) 的软件，只需要添加 channel 即可。
+考虑到国内的网络环境，往往使用 conda 安装软件时速度较慢。好在清华大学建立了
+一系列[镜像](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)，
+对此状况有所改善。我们可以通过以下命令添加清华的镜像：
+
+```bash
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
+conda config --set show_channel_urls yes
+
+```
+
 #### 安装软件、软件包
 
 在该虚拟环境中，安装上课所需的软件包：
@@ -101,13 +120,16 @@ conda install numpy scipy matplotlib jupyter
 [Project Jupyter](https://jupyter.org/) 
 为 Python 以及其他众多编程语言提供了十分便利的
 交互式计算环境： Jupyter notebook 与 Jupyter Lab。
-前者 Jupyter notebook 顾名思义，你可以理解为就是一个记事本，我们可以在记事本中写入很多各种各样的 内容，比如文字、图片、视频等等，你可以用它来写日记、作实验记录，甚至用来写书。
+前者 Jupyter notebook 顾名思义，你可以理解为就是一个记事本，我们可以在记事本中写入很多各种各样的 内容，比如文字、图片、视频等等，你可以用它来写日记、作实验记录，甚至用来
+[写书](https://jupyter.org/jupyter-book/intro.html)。
 和一般所理解的 notebook 没有什么不同。<del>真的吗？</del>
 只不过比较特殊的是它可以嵌入代码，并且可以实时的运行代码，并返回运行的结果。
 这样就很适合我们来用它作交互式的数据分析了，并且甚至分析完当场就有了一份
 实验记录加数据分析报告。多好用啊！这也是我们的教程选择它的原因。
 至于 Jupyter Lab，你可以理解为是 notebook 的加强版，有更多的功能，
 但也更加复杂，我们这里只介绍 notebook。
+
+### 启动 Jupyter notebook
 
 这里我们介绍一些 Jupyter notebook 的基本使用。
 在上一步中，我们已经完成了 Jupyter 环境的安装，可以打开终端，输入：
@@ -118,3 +140,33 @@ jupyter notebook
 
 启动一个 Jupyter server，如果你在安装了图形界面的操作系统中进行操作，
 这时会自动弹出一个浏览器窗口
+
+## 编辑器
+
+对于我们的教程来说，代码几乎放在Jupyter notebook之中，但有时你也需要一个好用的编辑器
+来编写 Python 脚本、模块、包。如果你有自己喜欢的编辑器，并且足够好用的话可以跳过本节。
+
+目前对于编辑 Python 代码，一般来说有两种选择，一种是选择较为轻量级的
+文本编辑器(Text editor)，适用于广泛的（不仅限于Python）代码、文本编辑，
+其中比较常见且功能足够丰富的比如说：
+
++ [VSCode](https://code.visualstudio.com/)：微软的开源项目，目前具有非常高的人气。
++ [Atom](https://atom.io/)：GitHub开发的一款开源文本编辑器。
++ [Sublime Text](https://www.sublimetext.com/)
++ 当然还有老牌的 Vim 与 Emacs，对于新手来说不是很友好，但二者都对其它的编辑器设计产生了相当深远的影响。
+
+你可以选择以上任意一种或者其他你喜欢的编辑器来编写Python代码，但要注意需要安装针对
+Python的插件，以支持 Python 的语法高亮和代码补全，以提供方便。
+
+另外一种选择是使用 IDE（Integrated Development Environment, 集成式开发环境）
+相较于文本编辑器，IDE 往往对于特定的语言有更好的优化，对代码有更好的语法分析，
+更智能的提醒、纠错功能，但同时也会消耗更多的计算机资源（内存、CPU）。对于 Python
+来说，选择有：
+
++ [PyCharm](https://www.jetbrains.com/pycharm/)：IDE 大厂 JetBrains 的
+产品，功能十分强大，同时有非常丰富的插件。社区版是免费的，一般来说免费版本的功能已经足够
+使用。如果你是学生，可以通过学校邮箱申请，得到一个免费的专业版。
++ [Spyder](https://www.spyder-ide.org/)：一个开源的Python IDE，界面与
+RStudio 非常相似，如果你原来是 R 用户，也许可以试试。
+
+以上只是提供了一些选择，总体来说这些都可以，选择哪一个就看你自己的兴趣了。
