@@ -16,58 +16,15 @@ Python 部分所包含的文本教程、代码以及示例数据等内容。
 
 ## Contents
 
-教程内容上大致分为三个部分，分在三个不同的时间段进行讲解，各个部分的内容如下：
+教程内容上大致分为三个部分，分在三个不同的时间段进行讲解：
 
-### 一、Python 基础以及常用标准库
++ [一、Python 基础以及常用标准库](part1-basic/)
++ [二、Data science 相关第三方库](part2-for-data-science/)
++ [三、命令行工具、生物信息学、计算流程](part3-bioinfo-related/)
 
-1. 基本成份
-    + 基本对象与运算符
-    + 表达式与变量
-2. 如何组合
-    + 内置数据结构
-        - list / tuple / set / dict
-    + 控制流
-        - 循环 for / while
-        - 分支
-3. 如何抽象
-    + 函数
-    + 类与对象
-    + 生成器
-    + 选择一种编程范式
-4. IO
-    + 文本文件、流读写
-    + 数据库读写
-    + 网络 IO
-5. 标准模块
-    + 正则表达式
-    + itertools, functools
-6. 代码包装 
-    + script
-    + module, package
-        - PyPI
+## Contribute
 
-### 二、Data science 相关第三方库
-
-1. 用 Numpy 做矩阵运算
-2. Pandas 处理表格数据
-3. 统计与统计学习
-    + Scipy
-    + Statmodel
-    + Scikit-Learn
-4. 绘图
-    + matplotlib
-    + seaborn
-    + 交互式图表： bokeh
-
-### 三、命令行工具、生物信息学、计算流程
-
-1. 命令行工具开发
-    + argparse
-    + click
-    + Fire
-2. 生物信息学常用文件格式的读写
-    + Fasta, Fastq
-    + BED, GFF, GTF
-    + SAM, BAM
-3. 计算流程开发
-    + Snakemake
+限于教程编写者水平有限，内容之中可能存在错误，以及安排不合理之处，
+希望大家谅解。
+如果发现错误，或者对于内容安排有建议，可通过 issue 方式提出，
+或直接与我取得联系，十分感谢！

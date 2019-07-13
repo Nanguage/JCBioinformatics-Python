@@ -3,6 +3,7 @@
 + [Anaconda](#Anaconda)
 + [Jupyter](#Jupyter)
 + [编辑器](#编辑器)
++ [其他](#其他)
 
 ## Anaconda
 
@@ -139,7 +140,19 @@ jupyter notebook
 ```
 
 启动一个 Jupyter server，如果你在安装了图形界面的操作系统中进行操作，
-这时会自动弹出一个浏览器窗口
+这时会自动弹出一个浏览器窗口。会显示你启动 jupyter 时候所在的文件目录。
+比如我们在本教程的 `part1-basic/` 目录下打开，你可以在此界面下创建
+notebook，或是打开目录下存在的 notebook（文件结尾为`.ipynb`）：
+
+![](./img/jupyter_usage_0.png)
+
+### 将 notebook 转换成 slides
+
+课程上使用的slides也是由 notebook 转换得到的。具体命令为：
+
+``` bash
+jupyter nbconvert [path/to/notebook.ipynb] --to slides --post serve --SlidesExporter.reveal_scroll=True --SlidesExporter.reveal_transition=none
+```
 
 ## 编辑器
 
