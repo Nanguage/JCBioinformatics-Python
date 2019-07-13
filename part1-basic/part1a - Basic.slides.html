@@ -11960,23 +11960,23 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#22522;&#26412;&#25104;&#20221;">&#22522;&#26412;&#25104;&#20221;<a class="anchor-link" href="#&#22522;&#26412;&#25104;&#20221;">&#182;</a></h2><h4 id="1.-&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65288;&#25968;&#25454;&#65289;">1. &#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65288;&#25968;&#25454;&#65289;<a class="anchor-link" href="#1.-&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65288;&#25968;&#25454;&#65289;">&#182;</a></h4><ul>
+<h2 id="&#22522;&#26412;&#25104;&#20221;">&#22522;&#26412;&#25104;&#20221;<a class="anchor-link" href="#&#22522;&#26412;&#25104;&#20221;">&#182;</a></h2><h3 id="1.-&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65306;">1. &#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65306;<a class="anchor-link" href="#1.-&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65306;">&#182;</a></h3><ul>
 <li>整数</li>
 <li>浮点数</li>
 <li>布尔值</li>
 <li>字符串、bytes</li>
 <li>None</li>
 </ul>
-<h4 id="2.-&#23545;&#24212;&#30340;&#36816;&#31639;&#65288;&#31243;&#24207;&#34892;&#20026;&#65289;">2. &#23545;&#24212;&#30340;&#36816;&#31639;&#65288;&#31243;&#24207;&#34892;&#20026;&#65289;<a class="anchor-link" href="#2.-&#23545;&#24212;&#30340;&#36816;&#31639;&#65288;&#31243;&#24207;&#34892;&#20026;&#65289;">&#182;</a></h4><ul>
+<h3 id="2.-&#22522;&#26412;&#30340;&#31243;&#24207;&#34892;&#20026;&#65306;">2. &#22522;&#26412;&#30340;&#31243;&#24207;&#34892;&#20026;&#65306;<a class="anchor-link" href="#2.-&#22522;&#26412;&#30340;&#31243;&#24207;&#34892;&#20026;&#65306;">&#182;</a></h3><h4 id="(1)-&#22522;&#26412;&#36816;&#31639;">(1) &#22522;&#26412;&#36816;&#31639;<a class="anchor-link" href="#(1)-&#22522;&#26412;&#36816;&#31639;">&#182;</a></h4><ul>
 <li>加减乘除、整除、余数、乘方、开方</li>
 <li>and、or、not</li>
 <li>encode、decode、字符串拼接、格式化</li>
 <li>...</li>
 </ul>
-
+<h4 id="(2)-&#21464;&#37327;&#19982;&#36171;&#20540;&#35821;&#21477;">(2) &#21464;&#37327;&#19982;&#36171;&#20540;&#35821;&#21477;<a class="anchor-link" href="#(2)-&#21464;&#37327;&#19982;&#36171;&#20540;&#35821;&#21477;">&#182;</a></h4>
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12332,7 +12332,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这不是全部，实际上有一些重要的运算（比如ceil, bottom）并没有被提到，可以参考Python官方文档 <a href="https://docs.python.org/3/library/math.html">math</a> 或者用到的时候再去查询。（实际上，除非记忆力超群，否则编程的时候除了最常用的那一部分，
-很多东西很难记住，用的时候去查就好）</p>
+很多东西是很难记住的，用的时候去查就好）</p>
 
 </div>
 </div>
@@ -12413,6 +12413,16 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>（<code>print</code> 是用于将一个对象进行<code>打印</code>操作的内置函数，如果你想在一个 <code>Cell</code> 之中检查多个表达式的求值结果，
+可以使用 <code>print</code> 函数。关于 <code>print</code> 函数，在后面 IO 的章节中会有更多的介绍。）</p>
+
+</div>
+</div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12526,11 +12536,572 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#21464;&#37327;&#19982;&#36171;&#20540;">&#21464;&#37327;&#19982;&#36171;&#20540;<a class="anchor-link" href="#&#21464;&#37327;&#19982;&#36171;&#20540;">&#182;</a></h3><p>上面我们展示了如何将 Python 解释器作为一个高级计算器来使用，输入一个表达式，解释器对其求值，将结果返回给我们。</p>
+<h3 id="&#21464;&#37327;&#19982;&#36171;&#20540;">&#21464;&#37327;&#19982;&#36171;&#20540;<a class="anchor-link" href="#&#21464;&#37327;&#19982;&#36171;&#20540;">&#182;</a></h3><p>上面我们展示了如何将 Python 解释器作为一个高级计算器来使用，输入一个表达式，解释器对其求值，将结果返回给我们。
+但对于编写程序来说，这显然还不够，很多时候我们希望将某一步计算的结果暂时保存起来，在需要的时候进行引用。</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>可以看到，上面的代码并没有输出返回值。这称之为一个<a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">赋值语句(assignment statement)</a>
+它所产生的效果是将一个值绑定在一个符号（变量, variable）上面。</p>
+<p>上面的赋值语句可以理解为我们把 6 * 7 的结果(42)放在了一个一个名字为 a 的“盒子”里。当然，我们也可以把值从“盒子”中取出来：</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>42</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>此外，还可以将 a 这个盒子中的值“复制”一份给 b。(但实际上，这里的比喻是不恰当的，因为很多时候Python中的变量实际上
+是一种“引用”，后面再说)</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>42</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>现在我们修改 b 的值：</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">9</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>a 的值并不会发生改变：</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>42</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>另外需要说明的一点，如果你曾经学习过 C，Java 这样的静态类型(Static typing)语言，你会知道，在静态类型语言中，一个变量的类型是
+事先声明确定的，之后如果赋值其他类型的对象给它，编译器在类型检查时会报错。但 Python 是 动态类型(Dynamic typing)语言，
+这意味着一个变量可以引用不同类型的值：</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">42</span>   <span class="c1"># 这里给 a 赋值了一个 int</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">42.0</span> <span class="c1"># 又给它了一个 float</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;The Answer to Everything.&quot;</span> <span class="c1"># 又给它了一个 str</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#23383;&#31526;(chr)&#19982;&#23383;&#31526;&#20018;(str)">&#23383;&#31526;(chr)&#19982;&#23383;&#31526;&#20018;(str)<a class="anchor-link" href="#&#23383;&#31526;(chr)&#19982;&#23383;&#31526;&#20018;(str)">&#182;</a></h3><p>现实世界中，除了数字以外我们经常接触到的一类信息是文本(Text)，比如说一段对话、人的名字、一本小说，都可以看作是文本，可以说“有语言的地方就有文本”。不但如此，生物的碱基序列也可以看作是一段文本。在计算机中，文本信息往往被抽象成 字符串（String），顾名思义，字符串就是一串字符（Char）所组成的序列。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Boston_Journal_1885-02-10_%28quick_brown_fox%29.png" alt="The quick brown fox jumps over the lazy dog"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>在介绍如何在Python中操作字符串之前，我们先来说组成字符串的基本单位：字符(Char)</p>
 
 </div>
 </div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[62]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;\x05&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq1</span> <span class="o">=</span> <span class="s2">&quot;AATTCCCCGGGG&quot;</span>  <span class="c1"># 这是一段DNA序列</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[40]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>str</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我们可以用内置的 <code>len</code> 函数查看一个字符串的长度：</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[41]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>12</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq2</span> <span class="o">=</span> <span class="s2">&quot;GCCTTAA&quot;</span>
+<span class="n">seq3</span> <span class="o">=</span> <span class="n">seq1</span> <span class="o">+</span> <span class="n">seq2</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">seq3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>19</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>还可以使用 切片(slice)语法 将一个字符串的子集取出来，比如，我们取 seq3 的前十个字符所组成的字符串：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq3</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[55]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;AATTCCCCGG&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>对于生物信息学编程来说，也许字符串会是你最经常打交道的数据类型。 Python 的字符串对象，内置了很多有用的 “方法”(method) 用来作字符串处理。 对于很多文本处理任务来说，这些 方法 是必不可少的。举个例子：</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq1</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>  <span class="c1"># 对 seq1 中 &quot;A&quot; 出现的次数进行计数</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[43]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>这里是第一次介绍如何调用一个 “方法”(method)， 你可以把 method 理解为一个函数，只不过它是与一个对象绑定在一起的，我们在后面学习面向对象编程的时候还会更详细的说明。这里，你只需要知道，以 obj.method() 这样 对象名.方法名() 的语法可以调用一个函数就可以了。</p>
+<p>让我们再来介绍一些字符串处理的方法：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sent</span> <span class="o">=</span> <span class="s2">&quot;The quick brown fox jumps over the lazy dog&quot;</span>  <span class="c1"># 新建一个字符串： sent</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sent</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1"># 将 sent 中的所有字符(chr)转换成大写(upper case)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[51]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sent</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c1"># 将 sent 中的所有字符(chr)转换成小写(lower case)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[53]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;the quick brown fox jumps over the lazy dog&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sent</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;fox&quot;</span><span class="p">)</span> <span class="c1"># 将</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[54]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>16</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
