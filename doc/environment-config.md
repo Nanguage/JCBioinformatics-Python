@@ -111,7 +111,8 @@ conda config --set show_channel_urls yes
 在该虚拟环境中，安装上课所需的软件包：
 
 ``` bash
-conda install numpy scipy matplotlib jupyter
+conda install --yes numpy scipy matplotlib pandas scikit-learn jupyter bokeh biopython
+conda install --yes -c bioconda pyfaidx samtools pysam snakemake bedtools htslib
 ```
 
 ## Jupyter
@@ -212,4 +213,3 @@ Q: 1. 我是新手，看完之后还是装不好，怎么办?
 
 A: 也许你可以去网上找一些视频安装教程，这样会更直观一些，比如在 bilibili 上搜索关键字
 "Anaconda"、"Jupyter"。
-

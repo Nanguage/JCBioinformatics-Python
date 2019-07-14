@@ -11914,19 +11914,6 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Contents">Contents<a class="anchor-link" href="#Contents">&#182;</a></h2><ol>
-<li>语言特性、语法</li>
-<li>IO/标准库</li>
-<li>Python 程序的几种打开方式</li>
-</ol>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#35821;&#35328;&#29305;&#24615;&#12289;&#35821;&#27861;">&#35821;&#35328;&#29305;&#24615;&#12289;&#35821;&#27861;<a class="anchor-link" href="#&#35821;&#35328;&#29305;&#24615;&#12289;&#35821;&#27861;">&#182;</a></h2><ol>
 <li>基本成份<ul>
 <li>基本对象与运算符</li>
@@ -12747,17 +12734,20 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>在介绍如何在Python中操作字符串之前，我们先来说组成字符串的基本单位：字符(Char)</p>
+<h4 id="&#23383;&#31526;&#19982;&#32534;&#30721;">&#23383;&#31526;&#19982;&#32534;&#30721;<a class="anchor-link" href="#&#23383;&#31526;&#19982;&#32534;&#30721;">&#182;</a></h4><p>在介绍如何在Python中操作字符串之前，我们先来说组成字符串的基本单位：字符(Char)。</p>
+<p>Python3 中默认采用的是 utf-8 字符编码，我们可以使用 <code>chr</code> 函数将一个字符的编码转换为该字符：</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 打印出所有的 ASCII 字符(0~127)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(),</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12770,13 +12760,116 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[62]:</div>
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&#39;\x00&#39; &#39;\x01&#39; &#39;\x02&#39; &#39;\x03&#39; &#39;\x04&#39; &#39;\x05&#39; &#39;\x06&#39; &#39;\x07&#39; &#39;\x08&#39; &#39;\t&#39; &#39;\n&#39; &#39;\x0b&#39; &#39;\x0c&#39; &#39;\r&#39; &#39;\x0e&#39; &#39;\x0f&#39; &#39;\x10&#39; &#39;\x11&#39; &#39;\x12&#39; &#39;\x13&#39; &#39;\x14&#39; &#39;\x15&#39; &#39;\x16&#39; &#39;\x17&#39; &#39;\x18&#39; &#39;\x19&#39; &#39;\x1a&#39; &#39;\x1b&#39; &#39;\x1c&#39; &#39;\x1d&#39; &#39;\x1e&#39; &#39;\x1f&#39; &#39; &#39; &#39;!&#39; &#39;&#34;&#39; &#39;#&#39; &#39;$&#39; &#39;%&#39; &#39;&amp;&#39; &#34;&#39;&#34; &#39;(&#39; &#39;)&#39; &#39;*&#39; &#39;+&#39; &#39;,&#39; &#39;-&#39; &#39;.&#39; &#39;/&#39; &#39;0&#39; &#39;1&#39; &#39;2&#39; &#39;3&#39; &#39;4&#39; &#39;5&#39; &#39;6&#39; &#39;7&#39; &#39;8&#39; &#39;9&#39; &#39;:&#39; &#39;;&#39; &#39;&lt;&#39; &#39;=&#39; &#39;&gt;&#39; &#39;?&#39; &#39;@&#39; &#39;A&#39; &#39;B&#39; &#39;C&#39; &#39;D&#39; &#39;E&#39; &#39;F&#39; &#39;G&#39; &#39;H&#39; &#39;I&#39; &#39;J&#39; &#39;K&#39; &#39;L&#39; &#39;M&#39; &#39;N&#39; &#39;O&#39; &#39;P&#39; &#39;Q&#39; &#39;R&#39; &#39;S&#39; &#39;T&#39; &#39;U&#39; &#39;V&#39; &#39;W&#39; &#39;X&#39; &#39;Y&#39; &#39;Z&#39; &#39;[&#39; &#39;\\&#39; &#39;]&#39; &#39;^&#39; &#39;_&#39; &#39;`&#39; &#39;a&#39; &#39;b&#39; &#39;c&#39; &#39;d&#39; &#39;e&#39; &#39;f&#39; &#39;g&#39; &#39;h&#39; &#39;i&#39; &#39;j&#39; &#39;k&#39; &#39;l&#39; &#39;m&#39; &#39;n&#39; &#39;o&#39; &#39;p&#39; &#39;q&#39; &#39;r&#39; &#39;s&#39; &#39;t&#39; &#39;u&#39; &#39;v&#39; &#39;w&#39; &#39;x&#39; &#39;y&#39; &#39;z&#39; &#39;{&#39; &#39;|&#39; &#39;}&#39; &#39;~&#39; &#39;\x7f&#39; </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 打印出一部分（前100个）汉字(0x4E00-0x9FA5)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x4E00</span><span class="p">,</span><span class="mh">0x9FA5</span><span class="o">+</span><span class="mi">1</span><span class="p">)[:</span><span class="mi">100</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(),</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&#39;一&#39; &#39;丁&#39; &#39;丂&#39; &#39;七&#39; &#39;丄&#39; &#39;丅&#39; &#39;丆&#39; &#39;万&#39; &#39;丈&#39; &#39;三&#39; &#39;上&#39; &#39;下&#39; &#39;丌&#39; &#39;不&#39; &#39;与&#39; &#39;丏&#39; &#39;丐&#39; &#39;丑&#39; &#39;丒&#39; &#39;专&#39; &#39;且&#39; &#39;丕&#39; &#39;世&#39; &#39;丗&#39; &#39;丘&#39; &#39;丙&#39; &#39;业&#39; &#39;丛&#39; &#39;东&#39; &#39;丝&#39; &#39;丞&#39; &#39;丟&#39; &#39;丠&#39; &#39;両&#39; &#39;丢&#39; &#39;丣&#39; &#39;两&#39; &#39;严&#39; &#39;並&#39; &#39;丧&#39; &#39;丨&#39; &#39;丩&#39; &#39;个&#39; &#39;丫&#39; &#39;丬&#39; &#39;中&#39; &#39;丮&#39; &#39;丯&#39; &#39;丰&#39; &#39;丱&#39; &#39;串&#39; &#39;丳&#39; &#39;临&#39; &#39;丵&#39; &#39;丶&#39; &#39;丷&#39; &#39;丸&#39; &#39;丹&#39; &#39;为&#39; &#39;主&#39; &#39;丼&#39; &#39;丽&#39; &#39;举&#39; &#39;丿&#39; &#39;乀&#39; &#39;乁&#39; &#39;乂&#39; &#39;乃&#39; &#39;乄&#39; &#39;久&#39; &#39;乆&#39; &#39;乇&#39; &#39;么&#39; &#39;义&#39; &#39;乊&#39; &#39;之&#39; &#39;乌&#39; &#39;乍&#39; &#39;乎&#39; &#39;乏&#39; &#39;乐&#39; &#39;乑&#39; &#39;乒&#39; &#39;乓&#39; &#39;乔&#39; &#39;乕&#39; &#39;乖&#39; &#39;乗&#39; &#39;乘&#39; &#39;乙&#39; &#39;乚&#39; &#39;乛&#39; &#39;乜&#39; &#39;九&#39; &#39;乞&#39; &#39;也&#39; &#39;习&#39; &#39;乡&#39; &#39;乢&#39; &#39;乣&#39; </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 打印出一部分 emoji(0x1F600-0x1F64F)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x1F600</span><span class="p">,</span><span class="mh">0x1F64F</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(),</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&#39;😀&#39; &#39;😁&#39; &#39;😂&#39; &#39;😃&#39; &#39;😄&#39; &#39;😅&#39; &#39;😆&#39; &#39;😇&#39; &#39;😈&#39; &#39;😉&#39; &#39;😊&#39; &#39;😋&#39; &#39;😌&#39; &#39;😍&#39; &#39;😎&#39; &#39;😏&#39; &#39;😐&#39; &#39;😑&#39; &#39;😒&#39; &#39;😓&#39; &#39;😔&#39; &#39;😕&#39; &#39;😖&#39; &#39;😗&#39; &#39;😘&#39; &#39;😙&#39; &#39;😚&#39; &#39;😛&#39; &#39;😜&#39; &#39;😝&#39; &#39;😞&#39; &#39;😟&#39; &#39;😠&#39; &#39;😡&#39; &#39;😢&#39; &#39;😣&#39; &#39;😤&#39; &#39;😥&#39; &#39;😦&#39; &#39;😧&#39; &#39;😨&#39; &#39;😩&#39; &#39;😪&#39; &#39;😫&#39; &#39;😬&#39; &#39;😭&#39; &#39;😮&#39; &#39;😯&#39; &#39;😰&#39; &#39;😱&#39; &#39;😲&#39; &#39;😳&#39; &#39;😴&#39; &#39;😵&#39; &#39;😶&#39; &#39;😷&#39; &#39;😸&#39; &#39;😹&#39; &#39;😺&#39; &#39;😻&#39; &#39;😼&#39; &#39;😽&#39; &#39;😾&#39; &#39;😿&#39; &#39;🙀&#39; &#39;🙁&#39; &#39;🙂&#39; &#39;🙃&#39; &#39;🙄&#39; &#39;🙅&#39; &#39;🙆&#39; &#39;🙇&#39; &#39;🙈&#39; &#39;🙉&#39; &#39;🙊&#39; &#39;🙋&#39; &#39;🙌&#39; &#39;🙍&#39; &#39;🙎&#39; &#39;🙏&#39; </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>告诉你一件事情，其实 Python 里面没有字符(char)类型，所谓字符，其实是长度为1的字符串(str)：</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[84]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;\x05&#39;</pre>
+<pre>str</pre>
 </div>
 
 </div>
@@ -12784,7 +12877,230 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 </div>
 </div>
 
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>与 chr 函数相反的是 <code>ord</code> 函数，可以得到一个字符的编码。</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>  <span class="c1"># a 字符对应的 unicode 编码</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[78]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>97</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;我&#39;</span><span class="p">)</span> <span class="c1"># 汉字 ‘我’ 对应的编码</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[79]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>25105</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;你是谁&#39;</span><span class="p">)</span> <span class="c1"># 如果输入的字符串长度大于1，会报错（抛出一个TypeError类型的异常）</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-85-1e601ea05e40&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>ord<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;你是谁&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-red-fg"># 如果输入的字符串长度大于1，会报错（抛出一个TypeError类型的异常）</span>
+
+<span class="ansi-red-fg">TypeError</span>: ord() expected a character, but string of length 3 found</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#25511;&#21046;&#23383;&#31526;&#19982;&#23383;&#31526;&#36716;&#20041;">&#25511;&#21046;&#23383;&#31526;&#19982;&#23383;&#31526;&#36716;&#20041;<a class="anchor-link" href="#&#25511;&#21046;&#23383;&#31526;&#19982;&#23383;&#31526;&#36716;&#20041;">&#182;</a></h4><p>有一些比较特殊的字符值得单独拿出来说一说，这些字符被称之为“控制字符”，因为它们并不像其他字符一样用来表示一个特定的图形。
+而是对某种输出设备具有特殊的控制作用。比如说最常见的，"\n" 在类Unix操作系统中用来表示文本中行的结束，"\t" (tab)表示一个分割符。
+这些字符在字符串打印(print)时具有特殊效果，比如：</p>
+
+</div>
+</div>
 </div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the bone of my sword.</span><span class="se">\n</span><span class="s2">Steel is my body and ...&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I&#39;m the bone of my sword.
+Steel is my body and ...
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>这里 "sword." 后面有一个 "\n"，在打印时这里会产生一个换行。再比如：</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;chrom</span><span class="se">\t</span><span class="s2">start</span><span class="se">\t</span><span class="s2">end</span><span class="se">\t</span><span class="s2">strand</span><span class="se">\t</span><span class="s2">name</span><span class="se">\t</span><span class="s2">score&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;chr1</span><span class="se">\t</span><span class="s2">520000</span><span class="se">\t</span><span class="s2">530000</span><span class="se">\t</span><span class="s2">+</span><span class="se">\t</span><span class="s2">gene1</span><span class="se">\t</span><span class="s2">0&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>chrom	start	end	strand	name	score
+chr1	520000	530000	+	gene1	0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>上面的代码中我们使用制表符"\t"分割了几个字段，将一个基因的信息以表格的信息打印了出来。这样的代码在你编写脚本处理文本文件的时候会经常用到。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>像这样在一个字符前加上'\'来使其表达不同于本身的意义的行为称之为“转义”</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#23383;&#31526;&#20018;">&#23383;&#31526;&#20018;<a class="anchor-link" href="#&#23383;&#31526;&#20018;">&#182;</a></h4><p>介绍完字符，字符串就可以登场了。</p>
+
+</div>
+</div>
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
@@ -12818,7 +13134,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
