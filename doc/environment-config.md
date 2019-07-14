@@ -144,7 +144,27 @@ jupyter notebook
 比如我们在本教程的 `part1-basic/` 目录下打开，你可以在此界面下创建
 notebook，或是打开目录下存在的 notebook（文件结尾为`.ipynb`）：
 
-![](./img/jupyter_usage_0.png)
+![jupyter_usage_0](./img/jupyter_usage_0.png)
+
+### notebook 使用
+
+新建或者进入一个 notebook 后，点击右上角菜单栏中的 Help -> User Interface Tour，
+Jupyter 内置的帮助会将界面的一些详细信息告诉你。总的来说，使用 notebook
+就是编辑与运行一系列 `Cell`，一个 `Cell`你可以认为是一个比较小的内容分割单位。
+你可以鼠标点击一个单元格，按 `Enter` 键进入编辑模式，对其中的内容进行编辑，
+然后使用快捷键 `Ctrl+Enter` 运行该单元格。
+
+![jupyter_usage_1](./img/jupyter_usage_1.png)
+
+你还可以通过使用界面上方的菜单或者快捷键，创建、删除以及移动`Cell`。
+一个 `Cell` 一般来说可以有两种模式：代码模式和文档模式。代码模式下你可以编写、运行代码。
+而在文档模式下，你可以通过 Markdown。
+Markdown 并不难，而且十分方便使用，你可以参考 GitHub 的
+[Markdown 语法说明](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+很快学会它。
+语法编写具有格式的文字、插入图片、公式等等，然后运行该`Cell`就能将文档进行渲染。
+嗯，图形界面的软件，我在这里用文字来讲解如何使用实在是显得太无力，不如你自己打开界面探索一番，
+遇到那里不会就看一下 Jupyter 的文档，或上网找一下视频教程。
 
 ### 将 notebook 转换成 slides
 
@@ -183,3 +203,13 @@ Python的插件，以支持 Python 的语法高亮和代码补全，以提供方
 RStudio 非常相似，如果你原来是 R 用户，也许可以试试。
 
 以上只是提供了一些选择，总体来说这些都可以，选择哪一个就看你自己的兴趣了。
+
+## 其他
+
+### FAQ
+
+Q: 1. 我是新手，看完之后还是装不好，怎么办?
+
+A: 也许你可以去网上找一些视频安装教程，这样会更直观一些，比如在 bilibili 上搜索关键字
+"Anaconda"、"Jupyter"。
+
