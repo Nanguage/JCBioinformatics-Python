@@ -15041,7 +15041,7 @@ chr1	520000	530000	+	gene1	0
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>明白slice语法了吗？上面代码的含义是取出从6个字符开始，到第15个字符的字符串。slice的语法是 string[start:end]，取出来的字符串包括start但是不包括end，可以理解为是一个左开右闭的区间 <code>[start, end)</code>，这样设计的好处是 end - start 刚好是取出的字符串的长度。</p>
+<p>明白slice语法了吗？上面代码的含义是取出从6个字符开始，到第15个字符的字符串。slice的语法是 string[start:end]，取出来的字符串包括start但是不包括end，可以理解为是一个左闭右开的区间 <code>[start, end)</code>，这样设计的好处是 end - start 刚好是取出的字符串的长度。</p>
 <p>此外，slice中还可以设置一个步长，表示每个多少个字符取一个出来：</p>
 
 </div>
