@@ -9,6 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
+
 <title>part1a - Basic slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
@@ -36,7 +37,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +59,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -255,7 +256,6 @@ th {
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6800,15 +6800,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6865,6 +6865,19 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6880,6 +6893,10 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6902,31 +6919,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7411,6 +7428,7 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7423,6 +7441,7 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
+.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8060,7 +8079,8 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8164,7 +8184,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8290,6 +8310,7 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8303,6 +8324,8 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8470,6 +8493,657 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-buysellads:before {
+  content: "\f20d";
+}
+.fa-connectdevelop:before {
+  content: "\f20e";
+}
+.fa-dashcube:before {
+  content: "\f210";
+}
+.fa-forumbee:before {
+  content: "\f211";
+}
+.fa-leanpub:before {
+  content: "\f212";
+}
+.fa-sellsy:before {
+  content: "\f213";
+}
+.fa-shirtsinbulk:before {
+  content: "\f214";
+}
+.fa-simplybuilt:before {
+  content: "\f215";
+}
+.fa-skyatlas:before {
+  content: "\f216";
+}
+.fa-cart-plus:before {
+  content: "\f217";
+}
+.fa-cart-arrow-down:before {
+  content: "\f218";
+}
+.fa-diamond:before {
+  content: "\f219";
+}
+.fa-ship:before {
+  content: "\f21a";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-motorcycle:before {
+  content: "\f21c";
+}
+.fa-street-view:before {
+  content: "\f21d";
+}
+.fa-heartbeat:before {
+  content: "\f21e";
+}
+.fa-venus:before {
+  content: "\f221";
+}
+.fa-mars:before {
+  content: "\f222";
+}
+.fa-mercury:before {
+  content: "\f223";
+}
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "\f224";
+}
+.fa-transgender-alt:before {
+  content: "\f225";
+}
+.fa-venus-double:before {
+  content: "\f226";
+}
+.fa-mars-double:before {
+  content: "\f227";
+}
+.fa-venus-mars:before {
+  content: "\f228";
+}
+.fa-mars-stroke:before {
+  content: "\f229";
+}
+.fa-mars-stroke-v:before {
+  content: "\f22a";
+}
+.fa-mars-stroke-h:before {
+  content: "\f22b";
+}
+.fa-neuter:before {
+  content: "\f22c";
+}
+.fa-genderless:before {
+  content: "\f22d";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-pinterest-p:before {
+  content: "\f231";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}
+.fa-server:before {
+  content: "\f233";
+}
+.fa-user-plus:before {
+  content: "\f234";
+}
+.fa-user-times:before {
+  content: "\f235";
+}
+.fa-hotel:before,
+.fa-bed:before {
+  content: "\f236";
+}
+.fa-viacoin:before {
+  content: "\f237";
+}
+.fa-train:before {
+  content: "\f238";
+}
+.fa-subway:before {
+  content: "\f239";
+}
+.fa-medium:before {
+  content: "\f23a";
+}
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "\f23b";
+}
+.fa-optin-monster:before {
+  content: "\f23c";
+}
+.fa-opencart:before {
+  content: "\f23d";
+}
+.fa-expeditedssl:before {
+  content: "\f23e";
+}
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "\f240";
+}
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "\f241";
+}
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "\f242";
+}
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "\f243";
+}
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "\f244";
+}
+.fa-mouse-pointer:before {
+  content: "\f245";
+}
+.fa-i-cursor:before {
+  content: "\f246";
+}
+.fa-object-group:before {
+  content: "\f247";
+}
+.fa-object-ungroup:before {
+  content: "\f248";
+}
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-sticky-note-o:before {
+  content: "\f24a";
+}
+.fa-cc-jcb:before {
+  content: "\f24b";
+}
+.fa-cc-diners-club:before {
+  content: "\f24c";
+}
+.fa-clone:before {
+  content: "\f24d";
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-hourglass-o:before {
+  content: "\f250";
+}
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "\f251";
+}
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "\f252";
+}
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "\f253";
+}
+.fa-hourglass:before {
+  content: "\f254";
+}
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "\f255";
+}
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "\f256";
+}
+.fa-hand-scissors-o:before {
+  content: "\f257";
+}
+.fa-hand-lizard-o:before {
+  content: "\f258";
+}
+.fa-hand-spock-o:before {
+  content: "\f259";
+}
+.fa-hand-pointer-o:before {
+  content: "\f25a";
+}
+.fa-hand-peace-o:before {
+  content: "\f25b";
+}
+.fa-trademark:before {
+  content: "\f25c";
+}
+.fa-registered:before {
+  content: "\f25d";
+}
+.fa-creative-commons:before {
+  content: "\f25e";
+}
+.fa-gg:before {
+  content: "\f260";
+}
+.fa-gg-circle:before {
+  content: "\f261";
+}
+.fa-tripadvisor:before {
+  content: "\f262";
+}
+.fa-odnoklassniki:before {
+  content: "\f263";
+}
+.fa-odnoklassniki-square:before {
+  content: "\f264";
+}
+.fa-get-pocket:before {
+  content: "\f265";
+}
+.fa-wikipedia-w:before {
+  content: "\f266";
+}
+.fa-safari:before {
+  content: "\f267";
+}
+.fa-chrome:before {
+  content: "\f268";
+}
+.fa-firefox:before {
+  content: "\f269";
+}
+.fa-opera:before {
+  content: "\f26a";
+}
+.fa-internet-explorer:before {
+  content: "\f26b";
+}
+.fa-tv:before,
+.fa-television:before {
+  content: "\f26c";
+}
+.fa-contao:before {
+  content: "\f26d";
+}
+.fa-500px:before {
+  content: "\f26e";
+}
+.fa-amazon:before {
+  content: "\f270";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-map-pin:before {
+  content: "\f276";
+}
+.fa-map-signs:before {
+  content: "\f277";
+}
+.fa-map-o:before {
+  content: "\f278";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-commenting:before {
+  content: "\f27a";
+}
+.fa-commenting-o:before {
+  content: "\f27b";
+}
+.fa-houzz:before {
+  content: "\f27c";
+}
+.fa-vimeo:before {
+  content: "\f27d";
+}
+.fa-black-tie:before {
+  content: "\f27e";
+}
+.fa-fonticons:before {
+  content: "\f280";
+}
+.fa-reddit-alien:before {
+  content: "\f281";
+}
+.fa-edge:before {
+  content: "\f282";
+}
+.fa-credit-card-alt:before {
+  content: "\f283";
+}
+.fa-codiepie:before {
+  content: "\f284";
+}
+.fa-modx:before {
+  content: "\f285";
+}
+.fa-fort-awesome:before {
+  content: "\f286";
+}
+.fa-usb:before {
+  content: "\f287";
+}
+.fa-product-hunt:before {
+  content: "\f288";
+}
+.fa-mixcloud:before {
+  content: "\f289";
+}
+.fa-scribd:before {
+  content: "\f28a";
+}
+.fa-pause-circle:before {
+  content: "\f28b";
+}
+.fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.fa-stop-circle:before {
+  content: "\f28d";
+}
+.fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+.fa-shopping-basket:before {
+  content: "\f291";
+}
+.fa-hashtag:before {
+  content: "\f292";
+}
+.fa-bluetooth:before {
+  content: "\f293";
+}
+.fa-bluetooth-b:before {
+  content: "\f294";
+}
+.fa-percent:before {
+  content: "\f295";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 /*!
 *
@@ -8750,6 +9424,10 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
+div.traceback-wrapper pre.traceback {
+  max-height: 600px;
+  overflow: auto;
+}
 /**
  * Primary styles
  *
@@ -8775,6 +9453,10 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -8806,13 +9488,16 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 991px) {
-  #ipython_notebook {
-    margin-left: 10px;
-  }
-}
 [dir="rtl"] #ipython_notebook {
+  margin-right: 10px;
+  margin-left: 0;
+}
+[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
+  float: right;
+}
+.flex-spacer {
+  flex: 1;
 }
 #noscript {
   width: auto;
@@ -8847,8 +9532,14 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
+span#kernel_logo_widget {
+  margin: 0 10px;
+}
 span#login_widget {
   float: right;
+}
+[dir="rtl"] span#login_widget {
+  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -8964,6 +9655,9 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
+.modal-header {
+  cursor: move;
+}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8984,6 +9678,19 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
+[dir="rtl"] .center-nav form.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] .center-nav .navbar-text {
+  float: right;
+}
+[dir="rtl"] .navbar-inner {
+  text-align: right;
+}
+[dir="rtl"] div.text-left {
+  text-align: right;
+}
 /*!
 *
 * IPython tree view
@@ -9000,34 +9707,42 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
   opacity: 0;
   z-index: 2;
-  width: 12ex;
-  margin-right: -12ex;
+}
+.alternate_upload .btn-xs > input.fileinput {
+  margin: -1px -5px;
 }
 .alternate_upload .btn-upload {
+  position: relative;
   height: 22px;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
+}
+[dir="rtl"] ul#tabs.nav-tabs > li {
+  float: right;
+}
+[dir="rtl"] ul#tabs.nav.nav-tabs {
+  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -9047,15 +9762,13 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons {
+[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
   float: left !important;
+  float: left;
 }
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
+[dir="rtl"] .list_toolbar .col-sm-4,
+[dir="rtl"] .list_toolbar .col-sm-8 {
+  float: right;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9111,7 +9824,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9121,6 +9834,9 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
+}
+[dir="rtl"] .list_item > div input {
+  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9136,6 +9852,14 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
+}
+.item_modified {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+[dir="rtl"] .item_modified.pull-right {
+  float: left !important;
+  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9164,6 +9888,14 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
+[dir="rtl"] .item_buttons.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .item_buttons .kernel-name {
+  margin-left: 7px;
+  float: right;
+}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9189,18 +9921,32 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
+.sort_button {
+  display: inline-block;
+  padding-left: 7px;
+}
+[dir="rtl"] .sort_button.pull-right {
+  float: left !important;
+  float: left;
+}
 #tree-selector {
   padding-right: 0px;
-}
-[dir="rtl"] #tree-selector a {
-  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
+[dir="rtl"] #button-select-all.btn {
+  float: right ;
+}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
+  margin-top: 2px;
+  height: 16px;
+}
+[dir="rtl"] #select-all.pull-left {
+  float: right !important;
+  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9218,6 +9964,12 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
+.folder_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.folder_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9234,6 +9986,12 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
+}
+.notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9253,6 +10011,12 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
+.running_notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.running_notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9270,6 +10034,12 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
+.file_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.file_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9284,8 +10054,11 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
+#new-menu .dropdown-header {
+  font-size: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 3px;
+  margin: -3px 20px 0;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9332,9 +10105,6 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
-}
 .delete-button {
   display: none;
 }
@@ -9342,6 +10112,12 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
+  display: none;
+}
+.move-button {
+  display: none;
+}
+.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9384,6 +10160,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -9398,6 +10180,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
+}
+.dirty-indicator-dirty.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-dirty.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -9414,6 +10202,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator-clean.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -9428,6 +10222,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
+}
+.dirty-indicator-clean:before.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean:before.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -9473,14 +10273,132 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
+.CodeMirror-dialog {
+  background-color: #fff;
+}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -9559,12 +10477,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9577,27 +10503,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -9793,7 +10731,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -9803,11 +10743,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -10061,6 +11014,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10099,7 +11055,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -10259,39 +11215,35 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 .rendered_html ul {
   list-style: disc;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ul ul ul {
   list-style: circle;
-  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
-  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10305,14 +11257,23 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
+  padding: 0px;
+  background-color: #fff;
+}
+.rendered_html code {
+  background-color: #eff0f1;
+}
+.rendered_html p code {
+  padding: 1px 5px;
+}
+.rendered_html pre code {
+  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
-  background-color: #fff;
   color: #000;
   font-size: 100%;
-  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -10320,24 +11281,36 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 1em 2em;
-}
-.rendered_html td,
-.rendered_html th {
-  text-align: left;
+  text-align: right;
   vertical-align: middle;
-  padding: 4px;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
 }
 .rendered_html th {
   font-weight: bold;
+}
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10364,6 +11337,15 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
+}
+.rendered_html .alert {
+  margin-bottom: initial;
+}
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] .rendered_html p {
+  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -10418,8 +11400,17 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered .rendered_html td {
+  max-width: none;
+}
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10556,6 +11547,28 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+.jupyter-keybindings {
+  padding: 1px;
+  line-height: 24px;
+  border-bottom: 1px solid gray;
+}
+.jupyter-keybindings input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.jupyter-keybindings i {
+  padding: 6px;
+}
+.well code {
+  background-color: #ffffff;
+  border-color: #ababab;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10688,6 +11701,152 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
+.tags_button_container {
+  width: 100%;
+  display: flex;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+.tag-container > * {
+  margin: 0 4px;
+}
+.remove-tag-btn {
+  margin-left: 4px;
+}
+.tags-input {
+  display: flex;
+}
+.cell-tag:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  /* Fade to background color of cell toolbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
+}
+.tags-input > * {
+  margin-left: 4px;
+}
+.cell-tag,
+.tags-input input,
+.tags-input button {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+  box-shadow: none;
+  width: inherit;
+  font-size: inherit;
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  display: inline-block;
+}
+.cell-tag:focus,
+.tags-input input:focus,
+.tags-input button:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.cell-tag::-moz-placeholder,
+.tags-input input::-moz-placeholder,
+.tags-input button::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.cell-tag:-ms-input-placeholder,
+.tags-input input:-ms-input-placeholder,
+.tags-input button:-ms-input-placeholder {
+  color: #999;
+}
+.cell-tag::-webkit-input-placeholder,
+.tags-input input::-webkit-input-placeholder,
+.tags-input button::-webkit-input-placeholder {
+  color: #999;
+}
+.cell-tag::-ms-expand,
+.tags-input input::-ms-expand,
+.tags-input button::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+.cell-tag[readonly],
+.tags-input input[readonly],
+.tags-input button[readonly],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  cursor: not-allowed;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button {
+  height: auto;
+}
+select.cell-tag,
+select.tags-input input,
+select.tags-input button {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button,
+select[multiple].cell-tag,
+select[multiple].tags-input input,
+select[multiple].tags-input button {
+  height: auto;
+}
+.cell-tag,
+.tags-input button {
+  padding: 0px 4px;
+}
+.cell-tag {
+  background-color: #fff;
+  white-space: nowrap;
+}
+.tags-input input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10713,16 +11872,28 @@ select[multiple].celltoolbar select {
 .completions select option.context {
   color: #286090;
 }
-#kernel_logo_widget {
-  float: right !important;
-  float: right;
-}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
+}
+[dir="rtl"] #kernel_logo_widget {
+  float: left !important;
+  float: left;
+}
+.modal .modal-body .move-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-items: center;
+}
+.modal .modal-body .move-path .server-root {
+  padding-right: 20px;
+}
+.modal .modal-body .move-path .path-input {
+  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -10744,11 +11915,41 @@ select[multiple].celltoolbar select {
 #menubar .navbar-collapse {
   clear: left;
 }
+[dir="rtl"] #menubar .navbar-toggle {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-collapse {
+  clear: right;
+}
+[dir="rtl"] #menubar .navbar-nav {
+  float: right;
+}
+[dir="rtl"] #menubar .nav {
+  padding-right: 0px;
+}
+[dir="rtl"] #menubar .navbar-nav > li {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-right {
+  float: left !important;
+}
+[dir="rtl"] ul.dropdown-menu {
+  text-align: right;
+  left: auto;
+}
+[dir="rtl"] ul#new-menu.dropdown-menu {
+  right: auto;
+  left: 0;
+}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
+}
+[dir="rtl"] i.menu-icon.pull-right {
+  float: left !important;
+  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -10756,6 +11957,17 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a {
+  padding-left: 2.2em;
+}
+[dir="rtl"] ul#help_menu li a i {
+  margin-right: 0;
+  margin-left: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a i.pull-right {
+  float: left !important;
+  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -10765,6 +11977,10 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
+}
+[dir="rtl"] .dropdown-submenu > .dropdown-menu {
+  right: 100%;
+  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -10783,11 +11999,23 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
+.dropdown-submenu > a:after.fa-pull-left {
+  margin-right: .3em;
+}
+.dropdown-submenu > a:after.fa-pull-right {
+  margin-left: .3em;
+}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
+}
+[dir="rtl"] .dropdown-submenu > a:after {
+  float: left;
+  content: "\f0d9";
+  margin-right: 0;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -10804,6 +12032,10 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
+[dir="rtl"] #notification_area {
+  float: left !important;
+  float: left;
+}
 .indicator_area {
   float: right !important;
   float: right;
@@ -10814,6 +12046,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] .indicator_area {
+  float: left !important;
+  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -10831,6 +12067,12 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
+[dir="rtl"] #kernel_indicator {
+  float: left !important;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid;
+}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -10841,6 +12083,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] #modal_indicator {
+  float: left !important;
+  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -10871,6 +12117,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
+.edit_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.edit_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
+}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -10885,6 +12137,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
+}
+.command_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.command_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -10901,6 +12159,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
+.kernel_idle_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_idle_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10915,6 +12179,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
+}
+.kernel_busy_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_busy_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -10931,6 +12201,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
+.kernel_dead_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_dead_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10945,6 +12221,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
+}
+.kernel_disconnected_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_disconnected_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -11335,27 +12617,46 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  margin-top: 6px;
+  height: 30px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 50%;
+  flex: 1;
 }
 span.save_widget span.filename {
-  height: 1em;
+  height: 100%;
   line-height: 1em;
-  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
+[dir="rtl"] span.save_widget.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] span.save_widget span.filename {
+  margin-left: 0;
+  margin-right: 16px;
+}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
+    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -11399,6 +12700,9 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
+.toolbar-btn-label {
+  margin-left: 6px;
+}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -11418,6 +12722,10 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
+}
+[dir="rtl"] .btn-group > .btn,
+.btn-group-vertical > .btn {
+  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -11568,6 +12876,10 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
+[dir="rtl"] ul.typeahead-list i {
+  margin-left: 0;
+  margin-right: -10px;
+}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -11576,6 +12888,13 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
+}
+ul.typeahead-list  > li > a.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .typeahead-list {
+  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -11587,10 +12906,19 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  display: none;
+  min-width: 20px;
+  color: transparent;
+}
+[dir="rtl"] .no-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .command-shortcut.pull-right {
+  float: left !important;
+  float: left;
 }
 .command-shortcut:before {
-  content: "(command)";
+  content: "(command mode)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11599,6 +12927,10 @@ ul.typeahead-list > li > a {
   padding-right: 3px;
   color: #777777;
 }
+[dir="rtl"] .edit-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -11606,6 +12938,12 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+  border-left: none;
+}
+[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
+  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11902,8 +13240,7 @@ a.anchor-link {
 <div class="slides">
 <section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Python-Basic">Python Basic<a class="anchor-link" href="#Python-Basic">&#182;</a></h1><p>JCBioinformatics - 2019 - HZAU</p>
 
@@ -11911,8 +13248,7 @@ a.anchor-link {
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#35821;&#35328;&#29305;&#24615;&#12289;&#35821;&#27861;">&#35821;&#35328;&#29305;&#24615;&#12289;&#35821;&#27861;<a class="anchor-link" href="#&#35821;&#35328;&#29305;&#24615;&#12289;&#35821;&#27861;">&#182;</a></h2><ol>
 <li><strong>基本成份</strong><ul>
@@ -11944,8 +13280,7 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#22522;&#26412;&#25104;&#20221;">&#22522;&#26412;&#25104;&#20221;<a class="anchor-link" href="#&#22522;&#26412;&#25104;&#20221;">&#182;</a></h2><h3 id="1.-&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65306;">1. &#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65306;<a class="anchor-link" href="#1.-&#22522;&#26412;&#25968;&#25454;&#31867;&#22411;&#65306;">&#182;</a></h3><ul>
 <li>整数</li>
@@ -11965,8 +13300,7 @@ a.anchor-link {
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#25968;&#23383;&#31867;&#22411;&#20197;&#21450;&#22522;&#26412;&#36816;&#31639;">&#25968;&#23383;&#31867;&#22411;&#20197;&#21450;&#22522;&#26412;&#36816;&#31639;<a class="anchor-link" href="#&#25968;&#23383;&#31867;&#22411;&#20197;&#21450;&#22522;&#26412;&#36816;&#31639;">&#182;</a></h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Casio_calculator_JS-20WK_in_201901_002.jpg" alt="Drawing" style="width: 200px;"/></p>
 <p>我们可以把 Python 解释器当成一个计算器来使用， 让我们来一做些基本的算术：</p>
@@ -11982,7 +13316,7 @@ a.anchor-link {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11992,7 +13326,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -12008,8 +13342,7 @@ a.anchor-link {
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>上面像上面这样一个 <code>In</code> 与一个 <code>Out</code>，在 Jupyter 中我们称之为一个 <code>Cell</code>， 我们可以在 <code>In</code> 之中输入一个一个 <code>表达式</code>，Python解释器 对其进行求值后会将结果返回，并将结果打印在<code>Out</code>之中。这种交互模式，我们一般称之为 <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>(Read-Eval-Print-Loop，读取、求值、打印循环)。
 REPL 非常适合于交互式的探索性数据分析。</p>
@@ -12025,7 +13358,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12035,7 +13368,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -12058,7 +13391,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12068,7 +13401,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -12093,7 +13426,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <span class="c1"># 顺便一提，Python 中，`#` 用来表示对代码的注释，`#` 之后的部分不会被执行。</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12103,7 +13436,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -12119,8 +13452,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>更多的数字运算：</p>
 
@@ -12135,7 +13467,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">8</span> <span class="o">//</span> <span class="mi">3</span>  <span class="c1"># 8 整除 3</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12145,7 +13477,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -12168,7 +13500,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">12</span> <span class="o">%</span> <span class="mi">8</span>  <span class="c1"># 求余数</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12178,7 +13510,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -12201,7 +13533,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span>  <span class="c1"># 2 的 3 次方</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12211,7 +13543,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -12227,8 +13559,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>math 包中提供了很多常见的数学运算，我们可以加载它：</p>
 
@@ -12243,7 +13574,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12256,7 +13587,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>  <span class="c1"># sin(pi)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12266,7 +13597,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -12289,7 +13620,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># 开平方</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12299,7 +13630,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -12315,8 +13646,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这不是全部，实际上有一些重要的运算（比如ceil, bottom）并没有被提到，可以参考Python官方文档 <a href="https://docs.python.org/3/library/math.html">math</a> 或者用到的时候再去查询。（实际上，除非记忆力超群，否则编程的时候除了最常用的那一部分，
 很多东西是很难记住的，用的时候去查就好）</p>
@@ -12325,8 +13655,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 </div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#36816;&#31639;&#20248;&#20808;&#32423;">&#36816;&#31639;&#20248;&#20808;&#32423;<a class="anchor-link" href="#&#36816;&#31639;&#20248;&#20808;&#32423;">&#182;</a></h4><p>我们上面展示的运算都是非常简单的表达式，当一个表达式中出现了不止一个运算符的时候，就会出现一个问题。因为Python使用的<code>中缀表达式 (Infix notation)</code> 运算的先后顺序无法从表达式本身进行判断，这时候就需要知道运算符之间的优先级。比如对于表达式： 1 + 2 / 3，这里 <code>/</code> 的优先级是高于 <code>+</code> 的，所以先算 <code>2/3</code>。</p>
 
@@ -12341,7 +13670,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12351,7 +13680,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -12367,8 +13696,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>具体的优先级定义可以参照<a href="https://docs.python.org/3/reference/expressions.html#operator-precedence">官方文档</a>，
 还有一个比较推荐的办法是：不知道优先级的话就用括号，比如：</p>
@@ -12384,7 +13712,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># 先算 2 / 3</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12394,7 +13722,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -12417,7 +13745,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>  <span class="c1"># 先算  1 + 2</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12427,7 +13755,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -12443,8 +13771,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#20851;&#20110;&#31867;&#22411;">&#20851;&#20110;&#31867;&#22411;<a class="anchor-link" href="#&#20851;&#20110;&#31867;&#22411;">&#182;</a></h3><h4 id="1.-&#22914;&#20309;&#26816;&#26597;&#23545;&#35937;&#30340;&#31867;&#22411;">1. &#22914;&#20309;&#26816;&#26597;&#23545;&#35937;&#30340;&#31867;&#22411;<a class="anchor-link" href="#1.-&#22914;&#20309;&#26816;&#26597;&#23545;&#35937;&#30340;&#31867;&#22411;">&#182;</a></h4><p>内置函数(<a href="https://docs.python.org/3/library/functions.html">built-in functions</a>) <code>type</code> 可以用来查看对象的类型，比如：</p>
 
@@ -12459,7 +13786,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12469,7 +13796,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -12494,7 +13821,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;aaaa&quot;</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12504,7 +13831,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12520,8 +13847,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>（<code>print</code> 是用于将一个对象进行<code>打印</code>操作的内置函数，如果你想在一个 <code>Cell</code> 之中检查多个表达式的求值结果，
 可以使用 <code>print</code> 函数。关于 <code>print</code> 函数，在后面 IO 的章节中会有更多的介绍。）</p>
@@ -12530,8 +13856,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="2.-&#22522;&#26412;&#31867;&#22411;&#38388;&#22914;&#20309;&#36827;&#34892;&#31867;&#22411;&#36716;&#25442;">2. &#22522;&#26412;&#31867;&#22411;&#38388;&#22914;&#20309;&#36827;&#34892;&#31867;&#22411;&#36716;&#25442;<a class="anchor-link" href="#2.-&#22522;&#26412;&#31867;&#22411;&#38388;&#22914;&#20309;&#36827;&#34892;&#31867;&#22411;&#36716;&#25442;">&#182;</a></h4><p>如上所见的几种基本类型，在Python中内置了相应的构造器函数，通过调用构造器函数，可实现基本类型间的转换，例如：</p>
 
@@ -12546,7 +13871,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>  <span class="c1"># 输入的是 字符串&quot;1&quot; 被转换成了整数 1</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12556,7 +13881,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -12579,7 +13904,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 输入的是整数 1 ，被转换成了浮点数 1.0</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12589,7 +13914,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -12612,7 +13937,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12622,7 +13947,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -12638,8 +13963,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#21464;&#37327;&#19982;&#36171;&#20540;">&#21464;&#37327;&#19982;&#36171;&#20540;<a class="anchor-link" href="#&#21464;&#37327;&#19982;&#36171;&#20540;">&#182;</a></h3><p>上面我们展示了如何将 Python 解释器作为一个高级计算器来使用，输入一个表达式，解释器对其求值，将结果返回给我们。
 但对于编写程序来说，这显然还不够，很多时候我们希望将某一步计算的结果暂时保存起来，在需要的时候进行引用。</p>
@@ -12655,14 +13979,13 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>可以看到，上面的代码并没有输出返回值。这称之为一个<a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">赋值语句(assignment statement)</a>
 它所产生的效果是将一个值绑定在一个符号（变量, variable）上面。</p>
@@ -12679,7 +14002,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12689,7 +14012,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -12705,8 +14028,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>此外，还可以将 a 这个盒子中的值“复制”一份给 b。(但实际上，这里的比喻是不恰当的，因为很多时候Python中的变量实际上
 是一种“引用”，后面再说)</p>
@@ -12723,7 +14045,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12733,7 +14055,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -12749,8 +14071,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>现在我们修改 b 的值：</p>
 
@@ -12765,14 +14086,13 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">9</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>a 的值并不会发生改变：</p>
 
@@ -12787,7 +14107,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12797,7 +14117,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -12813,8 +14133,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>另外需要说明的一点，如果你曾经学习过 C，Java 这样的静态类型(Static typing)语言，你会知道，在静态类型语言中，一个变量的类型是
 事先声明确定的，之后如果赋值其他类型的对象给它，编译器在类型检查时会报错。但 Python 是 动态类型(Dynamic typing)语言，
@@ -12833,14 +14152,13 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;The Answer to Everything.&quot;</span> <span class="c1"># 又给它了一个 str</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#36171;&#20540;&#36816;&#31639;&#31526;-assignment-operator">&#36171;&#20540;&#36816;&#31639;&#31526; assignment operator<a class="anchor-link" href="#&#36171;&#20540;&#36816;&#31639;&#31526;-assignment-operator">&#182;</a></h4><p>还有一类赋值操作，相当于基本的运算与一般赋值操作的耦合，比如：</p>
 
@@ -12857,7 +14175,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12867,7 +14185,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -12883,8 +14201,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>此处的 <code>b += 41</code> 其实与 <code>b = b + 41</code> 的语义是完全相同的，只是一种便捷的表达方法。对，你应该能想到，其他的操作符也对应
 的有 赋值运算符，比如 <code>*=</code>, <code>/=</code>, ...</p>
@@ -12902,7 +14219,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12912,7 +14229,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -12928,8 +14245,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#23383;&#31526;(chr)&#19982;&#23383;&#31526;&#20018;(str)">&#23383;&#31526;(chr)&#19982;&#23383;&#31526;&#20018;(str)<a class="anchor-link" href="#&#23383;&#31526;(chr)&#19982;&#23383;&#31526;&#20018;(str)">&#182;</a></h3><p>现实世界中，除了数字以外我们经常接触到的一类信息是文本(Text)，比如说一段对话、人的名字、一本小说，都可以看作是文本，可以说“有语言的地方就有文本”。不但如此，生物的碱基序列也可以看作是一段文本。在计算机中，文本信息往往被抽象成 字符串（String），顾名思义，字符串就是一串字符（Char）所组成的序列。</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Boston_Journal_1885-02-10_%28quick_brown_fox%29.png" alt="The quick brown fox jumps over the lazy dog"></p>
@@ -12938,8 +14254,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#23383;&#31526;&#19982;&#32534;&#30721;">&#23383;&#31526;&#19982;&#32534;&#30721;<a class="anchor-link" href="#&#23383;&#31526;&#19982;&#32534;&#30721;">&#182;</a></h4><p>在介绍如何在Python中操作字符串之前，我们先来说组成字符串的基本单位：字符(Char)。</p>
 <p>Python3 中默认采用的是 utf-8 字符编码，我们可以使用 <code>chr</code> 函数将一个字符的<code>Unicode</code>编码转换为该字符：</p>
@@ -12957,7 +14272,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12967,7 +14282,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -12992,7 +14307,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13002,7 +14317,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -13027,7 +14342,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
     <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(),</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13037,7 +14352,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -13059,7 +14374,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
     <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(),</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13069,7 +14384,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -13091,7 +14406,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
     <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(),</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13101,7 +14416,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -13114,8 +14429,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>告诉你一件事情，其实 Python 里面没有字符(char)类型，所谓字符，其实是长度为1的字符串(str)：</p>
 
@@ -13130,7 +14444,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13140,7 +14454,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[32]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -13156,8 +14470,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>与 chr 函数相反的是 <code>ord</code> 函数，可以得到一个字符的<code>Unicode</code>编码。</p>
 
@@ -13172,7 +14485,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>  <span class="c1"># a 字符对应的 unicode 编码</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13182,7 +14495,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -13205,7 +14518,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;我&#39;</span><span class="p">)</span> <span class="c1"># 汉字 ‘我’ 对应的编码</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13215,7 +14528,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -13238,7 +14551,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;你是谁&#39;</span><span class="p">)</span> <span class="c1"># 如果输入的字符串长度大于1，会报错（抛出一个TypeError类型的异常）</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13248,7 +14561,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_text output_error">
@@ -13267,8 +14580,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#25511;&#21046;&#23383;&#31526;&#19982;&#23383;&#31526;&#36716;&#20041;">&#25511;&#21046;&#23383;&#31526;&#19982;&#23383;&#31526;&#36716;&#20041;<a class="anchor-link" href="#&#25511;&#21046;&#23383;&#31526;&#19982;&#23383;&#31526;&#36716;&#20041;">&#182;</a></h4><p>有一些比较特殊的字符值得单独拿出来说一说，这些字符被称之为“控制字符”，因为它们并不像其他字符一样用来表示一个特定的图形。
 而是对某种输出设备具有特殊的控制作用。比如说最常见的，"\n" 在类Unix操作系统中用来表示文本中行的结束，"\t" (tab)表示一个分割符。
@@ -13285,7 +14597,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the bone of my sword.</span><span class="se">\n</span><span class="s2">Steel is my body and ...&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13295,7 +14607,7 @@ REPL 非常适合于交互式的探索性数据分析。</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -13310,8 +14622,7 @@ Steel is my body and ...
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里 "sword." 后面有一个 "\n"，在打印时这里会产生一个换行。再比如：</p>
 
@@ -13327,7 +14638,7 @@ Steel is my body and ...
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;chr1</span><span class="se">\t</span><span class="s2">520000</span><span class="se">\t</span><span class="s2">530000</span><span class="se">\t</span><span class="s2">+</span><span class="se">\t</span><span class="s2">gene1</span><span class="se">\t</span><span class="s2">0&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13337,7 +14648,7 @@ Steel is my body and ...
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -13352,8 +14663,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>上面的代码中我们使用制表符"\t"分割了几个字段，将一个基因的信息以表格的信息打印了出来。这样的代码在你编写脚本处理文本文件的时候会经常用到。</p>
 
@@ -13361,8 +14671,7 @@ chr1	520000	530000	+	gene1	0
 </div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>像这样在一个字符前加上'\'来使其表达不同于本身的意义的行为称之为“转义”(escape)。除了上面提到的换行符和制表符，还有其他的转义字符，
 具体可以参考<a href="https://docs.python.org/3/reference/lexical_analysis.html#literals">这里</a>。值得一提的是（抱歉，辞藻匮乏，文档里面出现了太多的“值得一提”），如果想打印 '\' 字符本身应该怎么办呢？一种解决办法是在转义符'\'前再加一个转义符：</p>
@@ -13378,7 +14687,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">n&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13388,7 +14697,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -13402,8 +14711,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>或者使用 raw string，在字符串字面量前加 r 即可：</p>
 
@@ -13418,7 +14726,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\n&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13428,7 +14736,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -13442,8 +14750,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#23383;&#31526;&#20018;">&#23383;&#31526;&#20018;<a class="anchor-link" href="#&#23383;&#31526;&#20018;">&#182;</a></h4><p>介绍完字符，字符串就可以登场了(<del>说的好像之前没出现过一样</del>)。</p>
 
@@ -13459,7 +14766,7 @@ chr1	520000	530000	+	gene1	0
 <span class="nb">type</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13469,7 +14776,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[40]:</div>
 
 
 
@@ -13485,8 +14792,7 @@ chr1	520000	530000	+	gene1	0
 
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>我们可以用内置的 <code>len</code> 函数查看一个字符串的长度：</p>
 
@@ -13501,7 +14807,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13511,7 +14817,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[41]:</div>
+    <div class="prompt output_prompt">Out[41]:</div>
 
 
 
@@ -13536,7 +14842,7 @@ chr1	520000	530000	+	gene1	0
 <span class="nb">len</span><span class="p">(</span><span class="n">seq3</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13546,7 +14852,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -13562,8 +14868,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>如果想取出字符串中的某一个字符，可以用下标(subscript)语法，比如，取出 seq3 中的第3个字符：</p>
 
@@ -13579,7 +14884,7 @@ chr1	520000	530000	+	gene1	0
 <span class="n">seq3</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13589,7 +14894,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -13600,7 +14905,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -13616,8 +14921,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>等等，要取第三个字符，为什么<code>[]</code>里面是2？因为，Python中的下标与R不同，是0-based的，也就是说第一个字符其实是第0个。为什么要这样设计，
 为什么不像 R 里面那样下标从1开始，不更自然一些吗。其实这种 0-base 的下标源自于 C 语言，你可以理解为它是一个“偏移量”，
@@ -13635,7 +14939,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq3</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># 最后一个字符</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13645,7 +14949,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[44]:</div>
 
 
 
@@ -13661,8 +14965,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>还可以使用 切片(slice)语法 将一个字符串的子集取出来，比如，我们取 seq3 的前十个字符所组成的字符串：</p>
 
@@ -13677,7 +14980,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq3</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13687,7 +14990,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[45]:</div>
+    <div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -13711,7 +15014,7 @@ chr1	520000	530000	+	gene1	0
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span><span class="n">seq3</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">15</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13721,7 +15024,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -13736,8 +15039,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>明白slice语法了吗？上面代码的含义是取出从6个字符开始，到第15个字符的字符串。slice的语法是 string[start:end]，取出来的字符串包括start但是不包括end，可以理解为是一个左开右闭的区间 <code>[start, end)</code>，这样设计的好处是 end - start 刚好是取出的字符串的长度。</p>
 <p>此外，slice中还可以设置一个步长，表示每个多少个字符取一个出来：</p>
@@ -13754,7 +15056,7 @@ chr1	520000	530000	+	gene1	0
 <span class="n">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># 步长为2，每两个字符取一个出来</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13764,7 +15066,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[47]:</div>
 
 
 
@@ -13780,8 +15082,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>步长还可以是负数，利用这个特性我们可以将字符串反转：</p>
 
@@ -13796,7 +15097,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">s1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13806,7 +15107,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[48]:</div>
+    <div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -13822,8 +15123,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>对于生物信息学编程来说，也许字符串会是你最经常打交道的数据类型。 Python 的字符串对象，内置了很多有用的 “方法”(method) 用来作字符串处理。 对于很多文本处理任务来说，这些 方法 是必不可少的。举个例子：</p>
 
@@ -13838,7 +15138,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq1</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>  <span class="c1"># 对 seq1 中 &quot;A&quot; 出现的次数进行计数</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13848,7 +15148,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[49]:</div>
 
 
 
@@ -13864,8 +15164,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里是第一次介绍如何调用一个 “方法”(method)， 你可以把 method 理解为一个函数，只不过它是与一个对象绑定在一起的，我们在后面学习面向对象编程的时候还会更详细的说明。这里，你只需要知道，以 obj.method() 这样 对象名.方法名() 的语法可以调用一个函数就可以了。</p>
 <p>让我们再来介绍一些字符串处理的方法：</p>
@@ -13881,7 +15180,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sent</span> <span class="o">=</span> <span class="s2">&quot;The quick brown fox jumps over the lazy dog&quot;</span>  <span class="c1"># 新建一个字符串： sent</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13894,7 +15193,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sent</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1"># 将 sent 中的所有字符(chr)转换成大写(upper case)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13904,7 +15203,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[51]:</div>
+    <div class="prompt output_prompt">Out[51]:</div>
 
 
 
@@ -13927,7 +15226,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sent</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c1"># 将 sent 中的所有字符(chr)转换成小写(lower case)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13937,7 +15236,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[52]:</div>
+    <div class="prompt output_prompt">Out[52]:</div>
 
 
 
@@ -13960,7 +15259,7 @@ chr1	520000	530000	+	gene1	0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sent</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;fox&quot;</span><span class="p">)</span> <span class="c1"># 在 sent 中搜索 &quot;fox&quot;，返回下标</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13970,7 +15269,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[53]:</div>
+    <div class="prompt output_prompt">Out[53]:</div>
 
 
 
@@ -13986,8 +15285,7 @@ chr1	520000	530000	+	gene1	0
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里很难将字符串处理的方法都说清楚，但如果做生物信息编程，你可能经常和字符串打交道，所以这些还是比较重要的。更多的请参考
 <a href="https://docs.python.org/3.7/library/stdtypes.html#string-methods">官方文档</a></p>
@@ -13996,8 +15294,7 @@ chr1	520000	530000	+	gene1	0
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#23383;&#31526;&#20018;&#26684;&#24335;&#21270;">&#23383;&#31526;&#20018;&#26684;&#24335;&#21270;<a class="anchor-link" href="#&#23383;&#31526;&#20018;&#26684;&#24335;&#21270;">&#182;</a></h3><p>使用字符串时，还需要面对的一个问题是如何将一系列值以我们想要的格式组合成一个字符串。当然一种办法是将字符串用 <code>+</code> 连接起来，但 Python 中有更好的处理方式。可以用字符串的<code>format</code>方法进行处理，比如说，我们将一个基因在染色体上的位置信息插入到一个模板中形成一条关于基因位置的信息：</p>
 
@@ -14017,7 +15314,7 @@ chr1	520000	530000	+	gene1	0
 <span class="nb">print</span><span class="p">(</span><span class="n">tmpl</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chr_</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14027,7 +15324,7 @@ chr1	520000	530000	+	gene1	0
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14044,8 +15341,7 @@ end	2000
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>format</code> 还可以用来处理 <code>float</code> 类型的打印精度问题：</p>
 
@@ -14063,7 +15359,7 @@ end	2000
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.2%}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># 格式化为 百分数形式 进行打印</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14073,7 +15369,7 @@ end	2000
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14089,8 +15385,7 @@ end	2000
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Python3.6 之后引入了 字符串插值（<a href="https://www.python.org/dev/peps/pep-0498/">Literal String Interpolation</a>）这个语法糖，
 我们可以利用这个特性来简化 format 的代码：</p>
@@ -14111,7 +15406,7 @@ end	2000
 <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14121,7 +15416,7 @@ end	2000
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14138,8 +15433,7 @@ end	2000
 
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="bytes">bytes<a class="anchor-link" href="#bytes">&#182;</a></h3><p>另外一类与字符串非常相似的数据类型是 bytes，而它与字符串的不同之处，归纳一下：</p>
 <ol>
@@ -14161,7 +15455,7 @@ end	2000
 <span class="nb">type</span><span class="p">(</span><span class="n">bs</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14171,7 +15465,7 @@ end	2000
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[57]:</div>
+    <div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -14187,8 +15481,7 @@ end	2000
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>我们也可以按照一定的编码规则，比如 ASCII 编码，或者 utf-8 编码（默认），将字符串编码成一个 <code>bytes</code>：</p>
 
@@ -14204,7 +15497,7 @@ end	2000
 <span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ASCII&#39;</span><span class="p">)</span>  <span class="c1"># 用 ASCII 编码</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14214,7 +15507,7 @@ end	2000
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[58]:</div>
+    <div class="prompt output_prompt">Out[58]:</div>
 
 
 
@@ -14237,7 +15530,7 @@ end	2000
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="c1"># 用 utf-8 编码</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14247,7 +15540,7 @@ end	2000
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[59]:</div>
+    <div class="prompt output_prompt">Out[59]:</div>
 
 
 
@@ -14263,8 +15556,7 @@ end	2000
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>与 encode 相反，<code>bytes</code> 解码(decode)成一个 字符串，但要注意编码规则需要和 encode 时候一致：</p>
 
@@ -14279,7 +15571,7 @@ end	2000
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14289,7 +15581,7 @@ end	2000
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[60]:</div>
+    <div class="prompt output_prompt">Out[60]:</div>
 
 
 
@@ -14312,7 +15604,7 @@ end	2000
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-16&#39;</span><span class="p">)</span> <span class="c1"># 编码与解码个是不一致，产生错误</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14322,7 +15614,7 @@ end	2000
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[61]:</div>
+    <div class="prompt output_prompt">Out[61]:</div>
 
 
 
@@ -14338,8 +15630,7 @@ end	2000
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>bytes</code> 的解码在我们读取二进制文件，比如压缩文件的时候可能会用到。</p>
 
@@ -14347,8 +15638,7 @@ end	2000
 </div>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#24067;&#23572;&#20540;&#19982;&#36923;&#36753;&#36816;&#31639;&#31526;">&#24067;&#23572;&#20540;&#19982;&#36923;&#36753;&#36816;&#31639;&#31526;<a class="anchor-link" href="#&#24067;&#23572;&#20540;&#19982;&#36923;&#36753;&#36816;&#31639;&#31526;">&#182;</a></h3><p>对于编写程序来说，<code>逻辑</code>、真与假是一件重要的事情。一般，我们将表示真假的的值称之为一个布尔值(Boolean，Bool)。
 Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <code>与</code>，<code>或</code>，<code>非</code>。事实上，在计算机底层硬件层面上就正在进行着大量的
@@ -14359,8 +15649,7 @@ Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <c
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>首先是 Bool 常量，<code>True</code> 与 <code>False</code></p>
 
@@ -14375,7 +15664,7 @@ Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <c
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14385,7 +15674,7 @@ Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <c
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[62]:</div>
+    <div class="prompt output_prompt">Out[62]:</div>
 
 
 
@@ -14408,7 +15697,7 @@ Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <c
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kc">False</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14418,7 +15707,7 @@ Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <c
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[63]:</div>
+    <div class="prompt output_prompt">Out[63]:</div>
 
 
 
@@ -14441,7 +15730,7 @@ Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <c
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14451,7 +15740,7 @@ Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <c
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[64]:</div>
+    <div class="prompt output_prompt">Out[64]:</div>
 
 
 
@@ -14467,8 +15756,7 @@ Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <c
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>逻辑 <code>与</code> 在Python中对应的运算符是 <code>and</code>，当左右两个值均为 <code>True</code> 时才返回 <code>True</code>:</p>
 
@@ -14486,7 +15774,7 @@ Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <c
 <span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14496,7 +15784,7 @@ Bool 之间的运算可以称之为逻辑运算，最常见的逻辑运算为 <c
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14513,8 +15801,7 @@ False
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>逻辑 <code>或</code>，对应于 <code>or</code>，有一个输入值为 <code>True</code> 就返回 <code>True</code>:</p>
 
@@ -14532,7 +15819,7 @@ False
 <span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14542,7 +15829,7 @@ False
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14559,8 +15846,7 @@ False
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>非</code> 对应 <code>not</code>，表示逻辑取反：</p>
 
@@ -14576,7 +15862,7 @@ False
 <span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14586,7 +15872,7 @@ False
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14601,8 +15887,7 @@ True
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>再来一些稍微复杂的：</p>
 
@@ -14617,7 +15902,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14627,7 +15912,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[68]:</div>
+    <div class="prompt output_prompt">Out[68]:</div>
 
 
 
@@ -14650,7 +15935,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kc">False</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14660,7 +15945,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[69]:</div>
+    <div class="prompt output_prompt">Out[69]:</div>
 
 
 
@@ -14676,8 +15961,7 @@ True
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#30701;&#36335;">&#30701;&#36335;<a class="anchor-link" href="#&#30701;&#36335;">&#182;</a></h4><p>这里需要说的是，<code>and</code> 与 <code>or</code> 其实是一种 <code>短路运算符</code>(Short-circuit evaluation)。因为对于 <code>and</code> 来说，只要第一个输入为
 <code>False</code> 时，第二个输入无论是什么，一定会返回 <code>False</code>，所以为了提升效率，解释器并不会对第二个输入进行求值。
@@ -14694,7 +15978,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This print will not execute.&quot;</span><span class="p">))</span>  <span class="c1"># 这里并不会产生打印行为，因为 or 发生了短路</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14704,7 +15988,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[70]:</div>
+    <div class="prompt output_prompt">Out[70]:</div>
 
 
 
@@ -14727,7 +16011,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kc">False</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This print will not execute.&quot;</span><span class="p">))</span> <span class="c1"># 这里也不会产生打印行为，因为 and 发生了短路</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14737,7 +16021,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[71]:</div>
+    <div class="prompt output_prompt">Out[71]:</div>
 
 
 
@@ -14760,7 +16044,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kc">False</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This print will not execute.&quot;</span><span class="p">))</span> <span class="c1"># 这里会打印，因为 or 需要检查第二个表达式的值</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14770,7 +16054,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14784,8 +16068,7 @@ True
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>其实其他类型的对象也能表现 <code>bool</code> 类型对象的行为，比如，对于 <code>int</code> 而言，0 代表 <code>False</code>，其他值代表 <code>True</code>，我们可以用
 <code>bool</code> 构造函数将其转换为 <code>bool</code> 类型：</p>
@@ -14801,7 +16084,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14811,7 +16094,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -14832,7 +16115,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14842,7 +16125,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[74]:</div>
+    <div class="prompt output_prompt">Out[74]:</div>
 
 
 
@@ -14865,7 +16148,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14875,7 +16158,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[75]:</div>
+    <div class="prompt output_prompt">Out[75]:</div>
 
 
 
@@ -14898,7 +16181,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14908,7 +16191,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[76]:</div>
+    <div class="prompt output_prompt">Out[76]:</div>
 
 
 
@@ -14924,8 +16207,7 @@ True
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>此外，一个空的字符串，以及空的<code>容器</code>(指list、tuple、dict、set等，后面会提到)也对应于 <code>False</code>：</p>
 
@@ -14940,7 +16222,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1"># 空字符串</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14950,7 +16232,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[77]:</div>
+    <div class="prompt output_prompt">Out[77]:</div>
 
 
 
@@ -14973,7 +16255,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">bool</span><span class="p">([])</span> <span class="c1"># 空 list</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14983,7 +16265,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[78]:</div>
+    <div class="prompt output_prompt">Out[78]:</div>
 
 
 
@@ -14999,8 +16281,7 @@ True
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#31354;&#20540;-None">&#31354;&#20540; None<a class="anchor-link" href="#&#31354;&#20540;-None">&#182;</a></h3><p>空值 <code>None</code> 其实是一种单独的类型，它用来代表 “什么都没有” 听起来似乎有些抽象，但还是经常会见它到的，
 比如一个函数什么都不返回时，其实它返回的是 <code>None</code> 这里先说一下，后面讲解函数的时候还会提到。</p>
@@ -15016,7 +16297,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15026,7 +16307,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[79]:</div>
+    <div class="prompt output_prompt">Out[79]:</div>
 
 
 
@@ -15049,7 +16330,7 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15059,7 +16340,7 @@ True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[80]:</div>
+    <div class="prompt output_prompt">Out[80]:</div>
 
 
 
@@ -15082,14 +16363,13 @@ True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kc">None</span>  <span class="c1"># None 在 REPL 中什么都不显示</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#35859;&#35789;">&#35859;&#35789;<a class="anchor-link" href="#&#35859;&#35789;">&#182;</a></h3><p>既然提到布尔值就不得不说谓词(predicate)了，谓词简单来说就是一种表示判断的运算符、函数或者语句，
 或者说是一种 任意类型到布尔类型的映射(Any -&gt; bool)。
@@ -15108,7 +16388,7 @@ Python中最常见的谓词是比较运算符。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">456</span> <span class="o">&gt;</span> <span class="mi">123</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15118,7 +16398,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[82]:</div>
+    <div class="prompt output_prompt">Out[82]:</div>
 
 
 
@@ -15141,7 +16421,7 @@ Python中最常见的谓词是比较运算符。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;戏说&quot;</span> <span class="o">!=</span> <span class="s2">&quot;胡说&quot;</span>  <span class="c1"># 字符串 &quot;戏说&quot; 不等于 &quot;胡说&quot;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15151,7 +16431,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[83]:</div>
+    <div class="prompt output_prompt">Out[83]:</div>
 
 
 
@@ -15174,7 +16454,7 @@ Python中最常见的谓词是比较运算符。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;改编&quot;</span> <span class="o">==</span> <span class="s2">&quot;乱编&quot;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15184,7 +16464,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[84]:</div>
+    <div class="prompt output_prompt">Out[84]:</div>
 
 
 
@@ -15200,8 +16480,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>还有一个常用的谓词是 <code>is</code> 语句（is statement），它用来判断两个对象是否是同一个对象。与 <code>==</code> 运算符有点像，但也存在差别。
 因为两个值相等的对象并不一定是同一个对象。我们举个例子：</p>
@@ -15219,7 +16498,7 @@ Python中最常见的谓词是比较运算符。</p>
 <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15229,7 +16508,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[85]:</div>
+    <div class="prompt output_prompt">Out[85]:</div>
 
 
 
@@ -15245,8 +16524,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里 a 与 b 的值是相等的，都是字符串“戏说”，但它们其实并不是同一个对象：</p>
 
@@ -15261,7 +16539,7 @@ Python中最常见的谓词是比较运算符。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15271,7 +16549,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[86]:</div>
+    <div class="prompt output_prompt">Out[86]:</div>
 
 
 
@@ -15287,8 +16565,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>实际上，每一个 Python 对象都有一个独特的 id ，我们也可以用它们的 id 判断是否是同一个对象：</p>
 
@@ -15303,7 +16580,7 @@ Python中最常见的谓词是比较运算符。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15313,7 +16590,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[87]:</div>
+    <div class="prompt output_prompt">Out[87]:</div>
 
 
 
@@ -15336,7 +16613,7 @@ Python中最常见的谓词是比较运算符。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15346,7 +16623,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[88]:</div>
+    <div class="prompt output_prompt">Out[88]:</div>
 
 
 
@@ -15369,7 +16646,7 @@ Python中最常见的谓词是比较运算符。</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15379,7 +16656,7 @@ Python中最常见的谓词是比较运算符。</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[89]:</div>
+    <div class="prompt output_prompt">Out[89]:</div>
 
 
 
