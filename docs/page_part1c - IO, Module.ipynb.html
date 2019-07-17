@@ -14888,10 +14888,10 @@ More generally, a child process inherits the standard streams of its parent proc
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat data/seqs.txt <span class="p">|</span> python scripts/cut_half.py 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat data/seqs.txt <span class="p">|</span> python scripts/cut_half.py <span class="p">|</span> head -n <span class="m">5</span>
 </pre></div>
 
     </div>
@@ -14913,21 +14913,6 @@ NTGCCCAGTCTGAAATGCCTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGCCTAACTTTCTAGATCTGTG
 NCACATTAGAAAGTATTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAATNTACATGTTAGGAGG
 NGAAACCATATGATTAGTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAACNGAAAAAACACATGC
 NTGAATGAAAAGAAAAGTTAGTCGGAGAACCAGTAGCTAGCTACTGGTNCTCCCACTAATNAACACAAAGATTCT
-NTCTAACTTGTTCCTTGCCTAGTCGGAGAACCAGTAGCTAGNTACTGGNTCTCCGACTAANATAATAGTAACAAC
-NTACTGGCTGCTAAGTTCTTAGTCGGAGAACCAGTAGCTAGNTCCTGGNTCCCCGCCTAANATTTTCGAGATGGA
-NCCTGTCATAGCTTCAGTTAGTCGGAGAACCAGTAGCTAGCNACTGGTNCTCCGACTAAANTAACCGTGACAAAA
-NCTAGAGAACTCAAAATTCGTTGGAGAAACCGTTGCTAGCTCCTGGTTCTCCGCCTCAATATGCATACTTTTGTG
-NTTTCTCCTACTGATTTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAAAAAAGGAATAATATTT
-NCTCTTTTTTGAAAACTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAATATTAATAAGATGACA
-NGTTTAGGCCAAGATTTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAAGTGAAGGGAGTTAAAA
-NTCTAAACCAGAACACCTTTAGTCGGAGACCCATTACCTAGCACCTGGTTCCCCACCTAACAAGAAGAAGCAGGA
-NTGAAGTAGCACATATGTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAAATAAACAAATCCTCCC
-NAGAAAGAGAGTATGTTTTAGGCGGAGAACCAGGAGCTAGCTACTGGTTCTCCGACTAATCGCTCTATCCTAAAA
-NCCTGTGAACTTATTAACCTTTTCTGGAATCGTCGTATTTTCAACGATTCCCCCCAACTATCCCACTCAATACGC
-NCTAGACAAGTAGACACTTAGTCGGAGAACCAGTAGCCAGCTACTGGTTCTCCGACTAATAGCAATGGTCCCATT
-NTCATGTGATTTTTGCTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCCACTAAAAATCTGCATAGCAGA
-NCTAAAATGAGCATTTTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCCCCGACTAAATTAAAAATAAGAAAC
-NTGCTGTAAGACAGTATTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAAAAGCGATTTCACTGTT
 </pre>
 </div>
 </div>
@@ -14947,6 +14932,321 @@ NTGCTGTAAGACAGTATTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAAAAGCGATTTCACTGTT
 </ol>
 <p>这里我们使用它就像使用 <code>Unix</code> 中其他的流处理程式那样接入管道(pipeline)。
 我们用它将 <code>seqs.txt</code> 中保存的序列截断了一半。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#25968;&#25454;&#24211;IO">&#25968;&#25454;&#24211;IO<a class="anchor-link" href="#&#25968;&#25454;&#24211;IO">&#182;</a></h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Database_models.jpg/720px-Database_models.jpg" width=400></p>
+<p>尽管文本文件很有用，但文本文件有时候并不能满足我们的数据储存需求，特别是在对大量的数据进行随机访问时，如果没有索引信息，访问的效率将十分糟糕。这时候我们需要使用数据库，Python 也能够满足我们与数据库进行数据读写的需求。但受篇幅限制，这里不再详细描述使用方法，仅给出参考。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>SQL 数据库：<ul>
+<li><a href="https://docs.python.org/3.7/library/sqlite3.html">sqlite3</a>: 内置模块</li>
+<li><a href="https://www.sqlalchemy.org/">SQLAlchemy</a>: 通用 SQL 操作、ORM</li>
+<li><a href="https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html">MySQL</a></li>
+</ul>
+</li>
+<li>NoSQL 数据库：<ul>
+<li><a href="https://pypi.org/project/redis/">redis</a></li>
+<li><a href="https://api.mongodb.com/python/current/index.html">MongoDB</a></li>
+</ul>
+</li>
+<li>图(Graph)数据库<ul>
+<li><a href="https://neo4j.com/developer/python/">neo4j</a></li>
+<li><a href="https://github.com/RedisGraph/redisgraph-py">redis-graph</a></li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#32593;&#32476;IO">&#32593;&#32476;IO<a class="anchor-link" href="#&#32593;&#32476;IO">&#182;</a></h2><p><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Internet_layering.svg/375px-Internet_layering.svg.png" alt="network"></p>
+<p>另一种重要的 IO 是网络 IO，这使得我们的程序能够通过互联网与另一台计算机上的进程之间进行通讯。同数据库一样，网络编程也是一个很大的话题，
+有兴趣可以自己学习，此处仅仅给出一些参考：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我们知道互联网通讯协议(Protocol)是一个层次化的体系，相应的， IO 可以发生在这些不同层协议的基础上。
+一般Python经常用于以传输层的 <code>TCP</code>, <code>UDP</code> 以及应用层 <code>HTTP</code> 协议为基础的网络 IO。</p>
+<ol>
+<li>Socket 编程：标准包 <a href="https://docs.python.org/3/library/socket.html">socket</a></li>
+<li>HTTP 编程：<ul>
+<li>服务端：<ul>
+<li><a href="https://palletsprojects.com/p/flask/">flask</a></li>
+<li><a href="https://www.djangoproject.com/">django</a></li>
+</ul>
+</li>
+<li>客户端：<ul>
+<li><a href="https://docs.python.org/3/library/urllib.html">urllib</a></li>
+<li><a href="https://2.python-requests.org/en/master/">requests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#27169;&#22359;(Module)">&#27169;&#22359;(Module)<a class="anchor-link" href="#&#27169;&#22359;(Module)">&#182;</a></h1><p>在 Python 中一个 <code>module</code> 可以认为就是一个 Python 文件(<code>.py</code>文件)，我们可以把各种对象放置在一个 <code>module</code> 中，
+在我们需要时从 <code>module</code> 中 导入(<code>import</code>） 到当前的环境中。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#21019;&#24314;&#19968;&#20010;-module">&#21019;&#24314;&#19968;&#20010; module<a class="anchor-link" href="#&#21019;&#24314;&#19968;&#20010;-module">&#182;</a></h3><p>我们可以创建一个 Python 模块，比如 <code>seq.py</code>, 在里面放入一些用于处理 DNA序列 信息的代码：</p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">part1-basic/seq.py</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">count_GC_ratio</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+    <span class="n">n_gc</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">B</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span> <span class="ow">or</span> <span class="n">B</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
+            <span class="n">n_gc</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n_gc</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">reverse_complement</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">:</span><span class="s1">&#39;n&#39;</span><span class="p">}</span>
+    <span class="n">table_upper</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span><span class="n">v</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">table_upper</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">table</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">seq</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])))</span>
+</pre></div>
+<p>我们可以导入(<code>import</code>)这个模块，然后使用它里面的对象：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seq</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;AAAGGTTCCG&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[120]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;CGGAACCTTT&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq</span><span class="o">.</span><span class="n">count_GC_ratio</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[121]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>当我们 <code>import</code> 一个模块时，模块会出现在当前的环境中，模块中的对象通过 <code>模块名.对象名</code> 的方法访问。</p>
+<p>还有一种导入方式可以直接将 模块中的对象 导入当前环境：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[122]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">seq</span> <span class="k">import</span> <span class="n">reverse_complement</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 现在可以直接调用 rc 函数了</span>
+
+<span class="n">reverse_complement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[123]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;CGGAACCTTT&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>也可以直接导入一个模块中的所有变量：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[124]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">seq</span> <span class="k">import</span> <span class="o">*</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">count_GC_ratio</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[125]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 
 </div>
 </div>
