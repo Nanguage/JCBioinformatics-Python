@@ -1,0 +1,5 @@
+In computer programming, standard streams are preconnected input and output communication channels[1] between a computer program and its environment when it begins execution.
+The three input/output (I/O) connections are called standard input (stdin), standard output (stdout) and standard error (stderr).
+Originally I/O happened via a physically connected system console (input via keyboard, output via monitor), but standard streams abstract this.
+When a command is executed via an interactive shell, the streams are typically connected to the text terminal on which the shell is running, but can be changed with redirection or a pipeline.
+More generally, a child process inherits the standard streams of its parent process.

@@ -13113,13 +13113,148 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Python-Basic">Python Basic<a class="anchor-link" href="#Python-Basic">&#182;</a></h1><p>JCBioinformatics - 2019 - HZAU</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="IO,-module,-script">IO, module, script<a class="anchor-link" href="#IO,-module,-script">&#182;</a></h1><ol>
+<li><p>IO(输入与输出)</p>
+<ol>
+<li>文件 IO<ul>
+<li>文本文件</li>
+<li>标准输入、输出流</li>
+<li>压缩文件</li>
+</ul>
+</li>
+<li>其他<ul>
+<li>数据库</li>
+<li>网络</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Module</p>
+<ol>
+<li>Standard modules<ul>
+<li>os</li>
+<li>subprocess</li>
+<li>sys</li>
+<li>re(正则表达式)</li>
+<li>time, datetime</li>
+<li>配置文件读写: json, yaml</li>
+</ul>
+</li>
+<li>自己编写模块</li>
+</ol>
+</li>
+<li><p>Script</p>
+<ul>
+<li>编写一个简单的 script</li>
+</ul>
+</li>
+<li><p>Package</p>
+<ul>
+<li>安装 package</li>
+<li>制作一个 package</li>
+<li>关于 PyPI</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#36755;&#20837;&#19982;&#36755;&#20986;">&#36755;&#20837;&#19982;&#36755;&#20986;<a class="anchor-link" href="#&#36755;&#20837;&#19982;&#36755;&#20986;">&#182;</a></h1><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop-hard-drive-exposed.jpg/330px-Laptop-hard-drive-exposed.jpg" alt=""></p>
+<p>目前为止，我们学习了很多基础的以及如何进行组合与抽象的概念、语法，但除了在做 <code>print</code> 的时候，我们的程序像是运行在一个独立的世界当中，并没有与外界产生交互。对于编程实践来说，这显然是不够的，是时候与外面的世界取得连接了。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#25991;&#20214;&#35835;&#20889;">&#25991;&#20214;&#35835;&#20889;<a class="anchor-link" href="#&#25991;&#20214;&#35835;&#20889;">&#182;</a></h2><p>在计算机中，信息往往是以文件的形式存储在磁盘上的，而文件系统是操作系统(OS)管理的，我们对文件的访问与操作都需要通过向操作系统发送请求来完成，这也称之为 系统调用(System Call)，Python 对这些操作进行了封装，我们可以很容易的访问文件系统。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#35835;&#21462;&#19968;&#20010;&#25991;&#26412;&#25991;&#20214;">&#35835;&#21462;&#19968;&#20010;&#25991;&#26412;&#25991;&#20214;<a class="anchor-link" href="#&#35835;&#21462;&#19968;&#20010;&#25991;&#26412;&#25991;&#20214;">&#182;</a></h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Illustration_of_a_newline.png/330px-Illustration_of_a_newline.png" alt=""></p>
+<p>文本文件是能够按照一定的字符编码规则（比如ASCII、UTF-8）将其解释为文本信息的一类文件。它一种非常常用的文件形式，特别是对于类 <code>Unix</code> 操作系统来说尤其如此，因为<code>Unix</code>的一条设计理念就是一切皆文本，信息储存以及系统、软件配置往往都通过文本文件来实现。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/File_table_and_inode_table.svg/450px-File_table_and_inode_table.svg.png" alt="descriptor"></p>
+<p>首先我们要介绍一个概念叫做 文件句柄(file handle) ，它是 Python 中对于文件的抽象。我们通过文件句柄与操作系统中的文件进行交互，比如我们要读取一个文件：</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x4E00</span><span class="p">,</span><span class="mh">0x9FA5</span><span class="p">)[:</span><span class="mi">100</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/example_text.txt&quot;</span><span class="p">)</span>  <span class="c1"># 打开一个文件句柄</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>_io.TextIOWrapper</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>看到我们以默认参数打开的文件句柄的类型为 <code>_io.TextIOWrapper</code>，这代表这个文件是以文本模式打开的。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 将 f 的内容读入内存</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="c1"># 将内容打印出来</span>
 </pre></div>
 
     </div>
@@ -13136,106 +13271,11 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>一
-丁
-丂
-七
-丄
-丅
-丆
-万
-丈
-三
-上
-下
-丌
-不
-与
-丏
-丐
-丑
-丒
-专
-且
-丕
-世
-丗
-丘
-丙
-业
-丛
-东
-丝
-丞
-丟
-丠
-両
-丢
-丣
-两
-严
-並
-丧
-丨
-丩
-个
-丫
-丬
-中
-丮
-丯
-丰
-丱
-串
-丳
-临
-丵
-丶
-丷
-丸
-丹
-为
-主
-丼
-丽
-举
-丿
-乀
-乁
-乂
-乃
-乄
-久
-乆
-乇
-么
-义
-乊
-之
-乌
-乍
-乎
-乏
-乐
-乑
-乒
-乓
-乔
-乕
-乖
-乗
-乘
-乙
-乚
-乛
-乜
-九
-乞
-也
-习
-乡
-乢
-乣
+<pre>In computer programming, standard streams are preconnected input and output communication channels[1] between a computer program and its environment when it begins execution.
+The three input/output (I/O) connections are called standard input (stdin), standard output (stdout) and standard error (stderr).
+Originally I/O happened via a physically connected system console (input via keyboard, output via monitor), but standard streams abstract this.
+When a command is executed via an interactive shell, the streams are typically connected to the text terminal on which the shell is running, but can be changed with redirection or a pipeline.
+More generally, a child process inherits the standard streams of its parent process.
 </pre>
 </div>
 </div>
@@ -13244,13 +13284,324 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>如果我们再读取一次呢？</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x1F600</span><span class="p">,</span><span class="mh">0x1F64F</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>返回了一个空字符串，这是因为 文件描述符 中存在一个 内部状态（或者称之为 <code>file pointer</code>） 记录了当前描述符所在的位置，进行文件读取或写入时，都会从这个位置开始。我们可以使用 <code>f.seek</code> 重置这个位置，以及使用 <code>f.tell</code>查看该位置。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># 将表述符位置重置为 0,即文件开始处</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="c1"># 检查目前所在位置</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 读取一个字符</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;I&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[40]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># 读取一行文本</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[41]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;n computer programming, standard streams are preconnected input and output communication channels[1] between a computer program and its environment when it begins execution.\n&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[42]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>175</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#20851;&#38381;&#21477;&#26564;">&#20851;&#38381;&#21477;&#26564;<a class="anchor-link" href="#&#20851;&#38381;&#21477;&#26564;">&#182;</a></h4><p>操作系统中文件描述符是一种有限资源，使用完毕后一定要及时关闭。关闭使用 <code>f.close</code> 方法：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">closed</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="with-&#35821;&#21477;">with &#35821;&#21477;<a class="anchor-link" href="#with-&#35821;&#21477;">&#182;</a></h3><p>Python 有一种很好的方式来避免忘记关闭文件句柄的问题，那就是上下文管理器以及<code>with</code>语句，比如：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/example_text.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># 打开一个文件句柄，保存在变量 f 中</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">closed</span>
 </pre></div>
 
     </div>
@@ -13267,85 +13618,100 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>😀
-😁
-😂
-😃
-😄
-😅
-😆
-😇
-😈
-😉
-😊
-😋
-😌
-😍
-😎
-😏
-😐
-😑
-😒
-😓
-😔
-😕
-😖
-😗
-😘
-😙
-😚
-😛
-😜
-😝
-😞
-😟
-😠
-😡
-😢
-😣
-😤
-😥
-😦
-😧
-😨
-😩
-😪
-😫
-😬
-😭
-😮
-😯
-😰
-😱
-😲
-😳
-😴
-😵
-😶
-😷
-😸
-😹
-😺
-😻
-😼
-😽
-😾
-😿
-🙀
-🙁
-🙂
-🙃
-🙄
-🙅
-🙆
-🙇
-🙈
-🙉
-🙊
-🙋
-🙌
-🙍
-🙎
+<pre>In computer programming, standard streams are preconnected input and output communication channels[1] between a computer program and its environment when it begins execution.
+The three input/output (I/O) connections are called standard input (stdin), standard output (stdout) and standard error (stderr).
+Originally I/O happened via a physically connected system console (input via keyboard, output via monitor), but standard streams abstract this.
+When a command is executed via an interactive shell, the streams are typically connected to the text terminal on which the shell is running, but can be changed with redirection or a pipeline.
+More generally, a child process inherits the standard streams of its parent process.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>可以看到，在 with 语句块之中，可以正常的使用文件句柄，而且不需要显示的调用 <code>f.close</code> 将句柄关闭，当退出语句块之后，f会被自动关闭。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#20889;&#20837;">&#20889;&#20837;<a class="anchor-link" href="#&#20889;&#20837;">&#182;</a></h3><p>我们再来看一下如何将字符串写入文本文件：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">contents</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;This long string will be writed to</span>
+<span class="s2">the file: ./data/test_write.txt</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/test_write.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>这里文件句柄的打开方式，与读取时类似，只是给<code>open</code>函数传入了第二个参数 'w'，
+这代表以写入模式打开。</p>
+<p>让我们来检查一下内容是否有被写入:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> cat ./data/test_write.txt  # IPython/Jupyter 中在输入前加 ! 可以运行 shell 命令
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>This long string will be writed to
+the file: ./data/test_write.txt
 </pre>
 </div>
 </div>
@@ -13353,6 +13719,1237 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Buffering">Buffering<a class="anchor-link" href="#Buffering">&#182;</a></h3><p>实际上，我们每次读写都需要进行系统调用(System call)，也就是说对于磁盘的访问是由操作系统来控制的，每次进行系统调用都会带来一定的额外开销。为了追求效率，会尽量减少系统调用的次数，一般来说会设置一个缓冲区，也叫做<code>Buffer</code>，每次读写时当输入或输出的字节数达到一定数量时才会离开Buffer。也就是说被<code>write</code>的内容，并不会立即真正被写入文件。比如：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/test_write_2.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;a new line</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[49]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>11</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat ./data/test_write_2.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>可以看到，此时文件中并没有内容。如果我们想立即将 <code>Buffer</code> 中的内容写入到文件，可以调用 <code>f.flush</code>（刷新）：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat ./data/test_write_2.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a new line
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>当然，当文件关闭时，<code>Buffer</code>也会被强制刷新。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;another new line</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat ./data/test_write_2.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a new line
+another new line
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>open</code> 函数还有另一个参数buffering用来控制 buffer 行为，传入 0 可以关闭 buffer（仅在二进制<code>'b'</code>模式下允许使用），传入 1 将以行为单位进行 buffer（仅支持文本模式<code>'t'</code>下使用）, &gt; 1 时可以指定一个固定大小的 <code>buffer</code> 块。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>查看默认的 <code>Buffer</code> size:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">io</span>
+<span class="n">io</span><span class="o">.</span><span class="n">DEFAULT_BUFFER_SIZE</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[48]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8192</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#21477;&#26564;&#27169;&#24335;&#65288;Mode&#65289;">&#21477;&#26564;&#27169;&#24335;&#65288;Mode&#65289;<a class="anchor-link" href="#&#21477;&#26564;&#27169;&#24335;&#65288;Mode&#65289;">&#182;</a></h3><p>我们打开一个用来写入的句柄时，像<code>open</code>函数传入了一个表示写入模式的字符<code>'w'</code>，实际上，文件句柄还有其他的打开模式：</p>
+
+<pre><code>Character Meaning
+--------- ---------------------------------------------------------------
+'r'       open for reading (default)
+'w'       open for writing, truncating the file first
+'x'       create a new file and open it for writing
+'a'       open for writing, appending to the end of the file if it exists
+'b'       binary mode
+'t'       text mode (default)
+'+'       open a disk file for updating (reading and writing)
+'U'       universal newline mode (deprecated)</code></pre>
+<p>如果我们不像 open 传入相关参数，默认的打开模式为 <code>'rt'</code>，即文本读取模式，而传入单个<code>'w'</code>时其实默认的是 <code>'wt'</code>，即文本写入模式。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#36861;&#21152;(append)&#27169;&#24335;">&#36861;&#21152;(append)&#27169;&#24335;<a class="anchor-link" href="#&#36861;&#21152;(append)&#27169;&#24335;">&#182;</a></h4><p>还有一个有用的模式是追加模式，有时我们向像一个已经存在的文件中写入内容，但是模式 <code>'w'</code>将原来存在的文件覆盖掉：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/test_write_3.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;a new line</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/test_write_3.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;another new line</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat ./data/test_write_3.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>another new line
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>第一次写入的 'a new line' 被覆盖掉了，如果不想让这种情况发生，我们在第二次<code>open</code>的时候应该使用追加模式<code>'a'</code>：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/test_write_3.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;a new line</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/test_write_3.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;another new line</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat ./data/test_write_3.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a new line
+another new line
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#35835;&#20889;&#20108;&#36827;&#21046;&#25991;&#20214;">&#35835;&#20889;&#20108;&#36827;&#21046;&#25991;&#20214;<a class="anchor-link" href="#&#35835;&#20889;&#20108;&#36827;&#21046;&#25991;&#20214;">&#182;</a></h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Wikipedia_favicon_hexdump.svg/435px-Wikipedia_favicon_hexdump.svg.png" width=300></p>
+<blockquote><p>linux 的 xxd 命令可以用来做 hexdump，查看文件的二进制信息。</p>
+</blockquote>
+<p>二进制文件指的是“非文本”文件，也就是说它其中包含着一些无法被解释为文本的部分。有一些信息形式天然地不适合用文本来表示，比如图像与音乐。而且很多时候二进制文件要比文本文件具有更高的信息密度，占用更少的存储空间。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我们该如何读取一个二进制文件呢？我们尝试读取一个 <code>png</code> 图像文件：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./img/sicp_0.png&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">UnicodeDecodeError</span>                        Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-64-6a4ce1ed6cf0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;./img/sicp_0.png&#34;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> f<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span>f<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/nanguage/S/miniconda3/lib/python3.6/codecs.py</span> in <span class="ansi-cyan-fg">decode</span><span class="ansi-blue-fg">(self, input, final)</span>
+<span class="ansi-green-intense-fg ansi-bold">    319</span>         <span class="ansi-red-fg"># decode input (taking the buffer into account)</span>
+<span class="ansi-green-intense-fg ansi-bold">    320</span>         data <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>buffer <span class="ansi-blue-fg">+</span> input
+<span class="ansi-green-fg">--&gt; 321</span><span class="ansi-red-fg">         </span><span class="ansi-blue-fg">(</span>result<span class="ansi-blue-fg">,</span> consumed<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_buffer_decode<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>errors<span class="ansi-blue-fg">,</span> final<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    322</span>         <span class="ansi-red-fg"># keep undecoded input until the next call</span>
+<span class="ansi-green-intense-fg ansi-bold">    323</span>         self<span class="ansi-blue-fg">.</span>buffer <span class="ansi-blue-fg">=</span> data<span class="ansi-blue-fg">[</span>consumed<span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span>
+
+<span class="ansi-red-fg">UnicodeDecodeError</span>: &#39;utf-8&#39; codec can&#39;t decode byte 0x89 in position 0: invalid start byte</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>可以看到，由于其中包含了无法被 <code>decode</code> 成 <code>utf-8</code>编码的 <code>bytes</code> 程序报错。</p>
+<p>面对二进制文件，我们需要使用 <code>binary mode</code> 打开文件：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./img/sicp_0.png&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">contents</span><span class="p">))</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;bytes&#39;&gt;
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[70]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>647071</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>上面的代码将图片文件的信息以 <code>bytes</code> 的形式读取，赋值给变量 <code>contents</code>。</p>
+<p>我们还可以将其写入到另一个文件中：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/test_write_binary.png&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># 写入二进制文件，以 &#39;wb&#39; mode打开</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls -l ./data/test_write_binary.png
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-rw-rw-r-- 1 nanguage nanguage 647071 7月  17 14:05 ./data/test_write_binary.png
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#25991;&#26412;&#25991;&#20214;&#20063;&#33021;&#20197;&#20108;&#36827;&#21046;&#24418;&#24335;&#35835;&#21462;">&#25991;&#26412;&#25991;&#20214;&#20063;&#33021;&#20197;&#20108;&#36827;&#21046;&#24418;&#24335;&#35835;&#21462;<a class="anchor-link" href="#&#25991;&#26412;&#25991;&#20214;&#20063;&#33021;&#20197;&#20108;&#36827;&#21046;&#24418;&#24335;&#35835;&#21462;">&#182;</a></h3><p>实际上文本文件在磁盘上也是二进制形式保存的，只不过以文本模式打开的句柄会自动对读入的 <code>bytes</code> 进行 <code>decode</code> 而已。我们也可以将一个文本文件以二进制形式打开，然后手动 <code>decode</code>：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/example_text.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[77]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>bytes</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">contents</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[78]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;In computer programming, standard streams are preconnected input and output communication channels[1] between a computer program and its environment when it begins execution.\nThe three input/output (I/O) connections are called standard input (stdin), standard output (stdout) and standard error (stderr).\nOriginally I/O happened via a physically connected system console (input via keyboard, output via monitor), but standard streams abstract this.\nWhen a command is executed via an interactive shell, the streams are typically connected to the text terminal on which the shell is running, but can be changed with redirection or a pipeline.\nMore generally, a child process inherits the standard streams of its parent process.&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#21387;&#32553;&#25991;&#20214;">&#21387;&#32553;&#25991;&#20214;<a class="anchor-link" href="#&#21387;&#32553;&#25991;&#20214;">&#182;</a></h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Gzip-Logo.svg/330px-Gzip-Logo.svg.png" width=200></p>
+<p>我们之前提到过，文本文件的信息密度其实并不高，在数据比较大的时候，我们为了节省磁盘空间，会将文件压缩，而压缩文件也是一种二进制文件。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#35835;&#20889;-gzip-&#25991;&#20214;">&#35835;&#20889; gzip &#25991;&#20214;<a class="anchor-link" href="#&#35835;&#20889;-gzip-&#25991;&#20214;">&#182;</a></h4><p><code>Linux</code>的世界中最常见的压缩文件格式就是以<code>.gz</code>为文件结尾的<code>gzip</code>压缩文件。Python 内置了用于读写 <code>gzip</code> 文件的模块，我们看一下如何使用它：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">gzip</span>
+
+<span class="c1"># 打开一个 gzip 句柄，读取内容</span>
+<span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;data/example_text.txt.gz&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">contents</span><span class="p">))</span>
+<span class="n">contents</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;bytes&#39;&gt;
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[86]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>b&#39;In computer programming, standard streams are preconnected input and output communication channels[1] between a computer program and its environment when it begins execution.\nThe three input/output (I/O) connections are called standard input (stdin), standard output (stdout) and standard error (stderr).\nOriginally I/O happened via a physically connected system console (input via keyboard, output via monitor), but standard streams abstract this.\nWhen a command is executed via an interactive shell, the streams are typically connected to the text terminal on which the shell is running, but can be changed with redirection or a pipeline.\nMore generally, a child process inherits the standard streams of its parent process.&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>可以看到，gzip文件句柄的<code>read</code>方法返回的是压缩文件内容的<code>bytes</code>信息，我们需要对其做 <code>decode</code> 才能得到 <code>str</code>：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">contents</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[87]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;In computer programming, standard streams are preconnected input and output communication channels[1] between a computer program and its environment when it begins execution.\nThe three input/output (I/O) connections are called standard input (stdin), standard output (stdout) and standard error (stderr).\nOriginally I/O happened via a physically connected system console (input via keyboard, output via monitor), but standard streams abstract this.\nWhen a command is executed via an interactive shell, the streams are typically connected to the text terminal on which the shell is running, but can be changed with redirection or a pipeline.\nMore generally, a child process inherits the standard streams of its parent process.&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>相反，当我们想把内容写入一个 gzip 文件的时候需要将 <code>str</code> 先 <code>encode</code> 成 <code>bytes</code>：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">str_to_be_write</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/test_write_binary.txt.gz&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">str_to_be_write</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>zcat data/test_write_binary.txt.gz
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>In computer programming, standard streams are preconnected input and output communication channels[1] between a computer program and its environment when it begins execution.
+The three input/output (I/O) connections are called standard input (stdin), standard output (stdout) and standard error (stderr).
+Originally I/O happened via a physically connected system console (input via keyboard, output via monitor), but standard streams abstract this.
+When a command is executed via an interactive shell, the streams are typically connected to the text terminal on which the shell is running, but can be changed with redirection or a pipeline.
+More generally, a child process inherits the standard streams of its parent process.</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="TextIOWrapper">TextIOWrapper<a class="anchor-link" href="#TextIOWrapper">&#182;</a></h4><p>当我们读写 <code>gzip</code> 文件时每次都需要手动去做 <code>encode</code>，<code>decode</code> 未免显得太麻烦了一些。其实 Python 中的 <code>io.TextIOWrapper</code> 可以用来简化这些操作：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">TextIOWrapper</span>
+
+<span class="k">with</span> <span class="n">TextIOWrapper</span><span class="p">(</span><span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/example_text.txt.gz&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 将 gzip 句柄进行了包装, 这时候 f 是一个 TextIOWrapper</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 不需要再做 decode</span>
+    
+<span class="nb">type</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;_io.TextIOWrapper&#39;&gt;
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[90]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>str</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>对于写入来说也是一样的：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">TextIOWrapper</span>
+
+<span class="k">with</span> <span class="n">TextIOWrapper</span><span class="p">(</span><span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/test_write_binary.txt.gz&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 将 gzip 句柄进行了包装, 这时候 f 是一个 TextIOWrapper</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span> <span class="c1"># 不需要再做 encode</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;_io.TextIOWrapper&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>zcat ./data/test_write_binary.txt.gz
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>In computer programming, standard streams are preconnected input and output communication channels[1] between a computer program and its environment when it begins execution.
+The three input/output (I/O) connections are called standard input (stdin), standard output (stdout) and standard error (stderr).
+Originally I/O happened via a physically connected system console (input via keyboard, output via monitor), but standard streams abstract this.
+When a command is executed via an interactive shell, the streams are typically connected to the text terminal on which the shell is running, but can be changed with redirection or a pipeline.
+More generally, a child process inherits the standard streams of its parent process.</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#20854;&#20182;&#26684;&#24335;&#21387;&#32553;&#25991;&#20214;">&#20854;&#20182;&#26684;&#24335;&#21387;&#32553;&#25991;&#20214;<a class="anchor-link" href="#&#20854;&#20182;&#26684;&#24335;&#21387;&#32553;&#25991;&#20214;">&#182;</a></h3><p>请参考：</p>
+<ul>
+<li>zip: <a href="https://docs.python.org/3/library/zipfile.html">https://docs.python.org/3/library/zipfile.html</a></li>
+<li>xz/lzma: <a href="https://docs.python.org/3/library/lzma.html">https://docs.python.org/3/library/lzma.html</a></li>
+<li>rar: <a href="https://pypi.org/project/rarfile/">https://pypi.org/project/rarfile/</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#26631;&#20934;&#36755;&#20837;&#12289;&#36755;&#20986;&#12289;&#38169;&#35823;&#27969;">&#26631;&#20934;&#36755;&#20837;&#12289;&#36755;&#20986;&#12289;&#38169;&#35823;&#27969;<a class="anchor-link" href="#&#26631;&#20934;&#36755;&#20837;&#12289;&#36755;&#20986;&#12289;&#38169;&#35823;&#27969;">&#182;</a></h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Stdstreams-notitle.svg/330px-Stdstreams-notitle.svg.png" alt="stdout"></p>
+<p>类 <code>Unix</code> 操作系统支持一种称之为 管道(pipeline) 的操作来串连多个 进程(Process) 的输入与输出。
+这是通过三个特殊的“文件”来实现的：</p>
+<ol>
+<li>标准输入流(stdin)：用来接受另一个进程的输出</li>
+<li>标准输出流(stdout)：输出给另一个进程、打印到终端或重定位到文件</li>
+<li>标准错误流(stderr)：输出不应该进入输出流的内容，比如报错信息</li>
+</ol>
+<p>你可以想象成每一个进程都长着一个耳朵（stdin）和两张嘴（stdout, stderr) 来和用户或者其他进程交流。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>在 Python 中，我们可以通过 <code>sys</code> 模块取得这三者：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;_io.TextIOWrapper name=&#39;&lt;stdin&gt;&#39; mode=&#39;r&#39; encoding=&#39;UTF-8&#39;&gt;
+&lt;ipykernel.iostream.OutStream object at 0x7f07492df240&gt;
+&lt;ipykernel.iostream.OutStream object at 0x7f07492df198&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我们向 <code>stdout</code> 写入一些内容试一试：<del>（话说我们的教程目前为止还没出现传统艺能 [hello world](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program)）</del></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello World!</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>其实上面的代码和直接使用 <code>print</code> 的效果是完全一样的。</p>
+<p>其实 <code>print</code> 还有一个参数接受一个文件句柄，只不过默认情况下，这个句柄是 <code>stdout</code>而已（
+我们其实也可以用 <code>print</code> 将内容输出到文件。）</p>
+<p>然后试一试 <code>stderr</code>：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello Err!&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Hello Err!</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>可以看到，在 notebook 中，从 <code>stderr</code> 输出的信息是红色的，因为 <code>stderr</code> 一般用来输出错误信息。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="input-&#20989;&#25968;">input &#20989;&#25968;<a class="anchor-link" href="#input-&#20989;&#25968;">&#182;</a></h3><p><code>input</code> 函数可以用来从 <code>stdin</code> 读入一个字符串，而且可以附带一条提示。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">how_are_you</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How are you?&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>How are you?fine
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">how_are_you</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[99]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;fine&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>这个函数在编写与用户交互的程序时非常有用。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#32534;&#20889;&#19968;&#20010;&#27969;&#22788;&#29702;&#33050;&#26412;">&#32534;&#20889;&#19968;&#20010;&#27969;&#22788;&#29702;&#33050;&#26412;<a class="anchor-link" href="#&#32534;&#20889;&#19968;&#20010;&#27969;&#22788;&#29702;&#33050;&#26412;">&#182;</a></h3><p>利用 Python 读写标准流的能力，我们可以编写像 <code>grep</code>, <code>awk</code> 那样的流处理工具。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我们目前还没有提到什么是 脚本(Script)，但并不复杂，它只是用来处理一些任务的代码片段而已。我们一般把 Python 脚本保存在一个以 '.py' 结尾的文件里。</p>
+<p>这里请你创建一个脚本，命名为 <code>cut_half.py</code>，然后将下面的内容写入这个文件：</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+<p>保存它，然后我们就可以运行了，这里我将它保存在了 'scripts/cut_half.py' 这个文件中，也许你和我不一样。
+然后我们运行它：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat data/seqs.txt <span class="p">|</span> python scripts/cut_half.py 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>NTTCCATTTCCAATCTTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAAGGATTGTTTTGGCTAT
+NTGCCCAGTCTGAAATGCCTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGCCTAACTTTCTAGATCTGTG
+NCACATTAGAAAGTATTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAATNTACATGTTAGGAGG
+NGAAACCATATGATTAGTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAACNGAAAAAACACATGC
+NTGAATGAAAAGAAAAGTTAGTCGGAGAACCAGTAGCTAGCTACTGGTNCTCCCACTAATNAACACAAAGATTCT
+NTCTAACTTGTTCCTTGCCTAGTCGGAGAACCAGTAGCTAGNTACTGGNTCTCCGACTAANATAATAGTAACAAC
+NTACTGGCTGCTAAGTTCTTAGTCGGAGAACCAGTAGCTAGNTCCTGGNTCCCCGCCTAANATTTTCGAGATGGA
+NCCTGTCATAGCTTCAGTTAGTCGGAGAACCAGTAGCTAGCNACTGGTNCTCCGACTAAANTAACCGTGACAAAA
+NCTAGAGAACTCAAAATTCGTTGGAGAAACCGTTGCTAGCTCCTGGTTCTCCGCCTCAATATGCATACTTTTGTG
+NTTTCTCCTACTGATTTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAAAAAAGGAATAATATTT
+NCTCTTTTTTGAAAACTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAATATTAATAAGATGACA
+NGTTTAGGCCAAGATTTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAAGTGAAGGGAGTTAAAA
+NTCTAAACCAGAACACCTTTAGTCGGAGACCCATTACCTAGCACCTGGTTCCCCACCTAACAAGAAGAAGCAGGA
+NTGAAGTAGCACATATGTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAAATAAACAAATCCTCCC
+NAGAAAGAGAGTATGTTTTAGGCGGAGAACCAGGAGCTAGCTACTGGTTCTCCGACTAATCGCTCTATCCTAAAA
+NCCTGTGAACTTATTAACCTTTTCTGGAATCGTCGTATTTTCAACGATTCCCCCCAACTATCCCACTCAATACGC
+NCTAGACAAGTAGACACTTAGTCGGAGAACCAGTAGCCAGCTACTGGTTCTCCGACTAATAGCAATGGTCCCATT
+NTCATGTGATTTTTGCTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCCACTAAAAATCTGCATAGCAGA
+NCTAAAATGAGCATTTTTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCCCCGACTAAATTAAAAATAAGAAAC
+NTGCTGTAAGACAGTATTTAGTCGGAGAACCAGTAGCTAGCTACTGGTTCTCCGACTAAAAGCGATTTCACTGTT
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>相信经过前面的学习，你应该能够看懂这个脚本所做的事情了：</p>
+<ol>
+<li>首先它从标准输入迭代读取 每一行文本</li>
+<li>然后用 .strip() 将 这一行末尾的'\n' 去掉</li>
+<li>打印 这一行的前一半长度的文本，打印到标准输出</li>
+</ol>
+<p>这里我们使用它就像使用 <code>Unix</code> 中其他的流处理程式那样接入管道(pipeline)。
+我们用它将 <code>seqs.txt</code> 中保存的序列截断了一半。</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>

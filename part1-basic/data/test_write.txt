@@ -1,0 +1,2 @@
+This long string will be writed to
+the file: ./data/test_write.txt
