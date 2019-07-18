@@ -16543,10 +16543,133 @@ False
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#20854;&#20182;&#29305;&#27530;&#23383;&#31526;">&#20854;&#20182;&#29305;&#27530;&#23383;&#31526;<a class="anchor-link" href="#&#20854;&#20182;&#29305;&#27530;&#23383;&#31526;">&#182;</a></h3><p>还有一些特殊字符是表示 特殊位置(^,$)与字符范围([0-9], )的，更多请参阅<a href="https://docs.python.org/3/library/re.html#module-re">文档</a></p>
+<h3 id="&#20854;&#20182;&#29305;&#27530;&#23383;&#31526;">&#20854;&#20182;&#29305;&#27530;&#23383;&#31526;<a class="anchor-link" href="#&#20854;&#20182;&#29305;&#27530;&#23383;&#31526;">&#182;</a></h3><p>还有一些特殊字符是表示 特殊位置(<code>^</code>,<code>$</code>)与字符范围(<code>[0-9]</code>, <code>\S</code>)的，更多请参阅<a href="https://docs.python.org/3/library/re.html#module-re">文档</a></p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#27169;&#24335;&#25628;&#32034;">&#27169;&#24335;&#25628;&#32034;<a class="anchor-link" href="#&#27169;&#24335;&#25628;&#32034;">&#182;</a></h3><p>上面，我们使用的是 <code>match</code> 函数对一个字符串的开始位置进行匹配，但更多的时候，我们需要的是模式搜索。模式搜索也就是说在一个字符串中从头搜到尾部，查看是否有匹配，有就返回，在 Python 中对应 <code>re.search</code> 函数。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[204]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;AATT&quot;</span><span class="p">,</span> <span class="s2">&quot;AAATTTTAAATTTT&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[204]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;_sre.SRE_Match object; span=(1, 5), match=&#39;AATT&#39;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>查找所有匹配</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[206]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;AATT&quot;</span><span class="p">,</span> <span class="s2">&quot;AAATTTTAAATTTT&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[206]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;AATT&#39;, &#39;AATT&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>捕获组</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[208]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;A(AT)T&quot;</span><span class="p">,</span> <span class="s2">&quot;AAATTTTAAATTTT&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[208]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;AT&#39;, &#39;AT&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div></section></section>
 </div>
 </div>

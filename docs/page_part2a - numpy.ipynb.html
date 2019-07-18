@@ -13115,7 +13115,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># def plot_array(plt, shape=(1, 10), figsize=None, cmap=&#39;viridis&#39;, a=None):</span>
@@ -13224,9 +13224,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<center>
-<img src="./img/0640.jpeg" width=600 height=400></img>
-</center>
+<p><img src="./img/0640.jpeg" width=600 height=400></img></p>
+
 </div>
 </div>
 </div>
@@ -15709,14 +15708,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.1-&#22522;&#26412;&#32479;&#35745;&#26041;&#27861;">4.1 &#22522;&#26412;&#32479;&#35745;&#26041;&#27861;<a class="anchor-link" href="#4.1-&#22522;&#26412;&#32479;&#35745;&#26041;&#27861;">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>关于函数中的axis</p>
+<p><code>numpy</code>支持你能想到的任何基本数学运算。</p>
 
 </div>
 </div>
@@ -15724,8 +15716,32 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>max, min, ...</p>
+<center>
+<img src="./img/array_plus.png" width=600 height=300></img>
+</center>
+<center>
+<img src="./img/array_plus2.png" width=600 height=300></img>
+</center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>numpy</code>数组的<strong>乘/除法</strong>运算，可能和我们想象中的不一样(<strong>矩阵乘法</strong>), 其是<code>element-wise</code>的乘法运算，就和普通的<strong>加减乘除</strong>一样 ：</p>
+<ul>
+<li>即将两个数组中<strong>相对应位置</strong>的元素进行<strong>相乘</strong>。(后面我们会提到<strong>矩阵的乘/除</strong>运算如何进行)</li>
+</ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<center>
+<img src="./img/array_multiply.png" width=800 height=200></img>
+</center>
 </div>
 </div>
 </div>
@@ -15739,14 +15755,71 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.3-&#21028;&#26029;">4.3 &#21028;&#26029;<a class="anchor-link" href="#4.3-&#21028;&#26029;">&#182;</a></h3>
+<p>可以看到，为了实现<code>element-wise</code>的运算，两个数组的形状大小必须一致。但实际的矩阵运算中，使用一个<strong>标量</strong>乘以一个<strong>矩阵</strong>是很常见的操作，<code>numpy</code>支持这种运算吗:</p>
+
 </div>
 </div>
-</div>> < != ==
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">a</span>
+<span class="n">a</span> <span class="o">*</span> <span class="mi">100</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1.]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[100., 100., 100., 100., 100.],
+       [100., 100., 100., 100., 100.],
+       [100., 100., 100., 100., 100.],
+       [100., 100., 100., 100., 100.],
+       [100., 100., 100., 100., 100.]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>all</p>
+<p>结果符合我们的预期，但是其实<code>numpy</code>偷偷的帮你做了另一件事:</p>
 
 </div>
 </div>
@@ -15754,7 +15827,19 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>any</p>
+<center>
+<img src="./img/array_multiply2.png" width=800 height=200></img>
+</center>
+<center>
+<img src="./img/broadcasting.png" width=800 height=200></img>
+</center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>看到了吗，当<strong>操作符</strong>两边的的运算数组形状不一致的话，<code>numpy</code>会自动的帮你<strong>补齐</strong>，使得两数组<strong>形状一致</strong>。这也称为<code>广播</code>，后续的<strong>比较操作符</strong>, 以及<strong>整数数组索引</strong>等操作都会在必要的时候帮你<strong>自动补齐</strong>。</p>
 
 </div>
 </div>
@@ -15762,7 +15847,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>nonzero</p>
+<h3 id="4.3-&#27604;&#36739;&#25805;&#20316;&#31526;">4.3 &#27604;&#36739;&#25805;&#20316;&#31526;<a class="anchor-link" href="#4.3-&#27604;&#36739;&#25805;&#20316;&#31526;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>python</code> 内置的数值类型拥有<strong>比较操作符</strong>(或谓词)，可以返回一个<strong>布尔值</strong>，<code>numpy</code>的<code>ndarray</code>也可以，因为从抽象的角度来看，对数学运算来说，两个<strong>数</strong>进行<strong>计算/比较</strong>和两个<strong>数组</strong>进行<strong>计算/比较</strong>没有区别。</p>
 
 </div>
 </div>
@@ -15770,11 +15862,326 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>where</p>
+<p>如果你理解了上面说的话后，下面的计算结果就显得再自然不过了：</p>
 
 </div>
 </div>
-</div>& &= | |= ~
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">a</span>
+<span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="o">!=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 1,  2,  3,  4],
+       [ 2,  1,  1,  4],
+       [ 5,  3,  2,  2],
+       [ 6,  2, 43,  1]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[False, False, False, False],
+       [False, False, False, False],
+       [False, False, False, False],
+       [ True, False,  True, False]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[False,  True,  True,  True],
+       [ True, False, False,  True],
+       [ True,  True,  True,  True],
+       [ True,  True,  True, False]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[False,  True, False, False],
+       [ True, False, False, False],
+       [False, False,  True,  True],
+       [False,  True, False, False]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>甚至，你可以将<strong>布尔值</strong>的<strong>逻辑运算</strong>也也拓展到<code>数组</code>这一层面, 不过与<code>python</code> 的 <code>and  or not</code>等<strong>逻辑运算符</strong>不同, <strong>布尔数组</strong> 使用与<code>位运算</code> 相似的操作符:</p>
+<ul>
+<li><code>~</code>  表<strong>取反</strong>   类似于 <code>not</code></li>
+<li><code>|</code>  表<strong>按位或</strong>   类似于  <code>or</code></li>
+<li><code>&amp;</code>  表<strong>按位与</strong>   类似于  <code>and</code></li>
+<li>还有其他的操作符请见<code>numpy</code>官网(不过其他的操作都可以由上述三个操作进行组合以实现)</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span>
+<span class="o">~</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+<span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[False, False, False, False],
+       [False, False, False, False],
+       [False, False, False, False],
+       [ True, False,  True, False]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ True,  True,  True,  True],
+       [ True,  True,  True,  True],
+       [ True,  True,  True,  True],
+       [False,  True, False,  True]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ True, False, False, False],
+       [False,  True,  True, False],
+       [False, False, False, False],
+       [ True, False,  True,  True]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[False,  True,  True,  True],
+       [ True, False, False,  True],
+       [False,  True,  True,  True],
+       [False,  True, False, False]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>还有专门针对<strong>布尔数组</strong>的<strong>逻辑运算函数</strong>(实际上和<code>python</code>内置的<code>any</code> <code>all</code> 函数类似):</p>
+<ul>
+<li><code>np.all()</code> <strong>布尔数组</strong>中所有值都为<code>True</code>才返回<code>True</code>, 否则返回<code>False</code></li>
+<li><code>np.any()</code> <strong>布尔数组</strong>中只要存在一个值为<code>True</code>的就返回<code>True</code>, 否则返回<code>False</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">!=</span> <span class="mi">0</span>
+<span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">==</span> <span class="mi">43</span>
+<span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">43</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ True,  True,  True,  True],
+       [ True,  True,  True,  True],
+       [ True,  True,  True,  True],
+       [ True,  True,  True,  True]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[False, False, False, False],
+       [False, False, False, False],
+       [False, False, False, False],
+       [False, False,  True, False]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="4.1-&#22522;&#26412;&#32479;&#35745;&#26041;&#27861;">4.1 &#22522;&#26412;&#32479;&#35745;&#26041;&#27861;<a class="anchor-link" href="#4.1-&#22522;&#26412;&#32479;&#35745;&#26041;&#27861;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>Numpy</code>提供大量的统计函数，比如求均值，最大值，和，方差等等。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<center>
+<img src="./img/array_func.png" width=800 height=200></img>
+</center>
+<center>
+<img src="./img/array_func2.png" width=800 height=200></img>
+</center>
+<center>
+<img src="./img/array_func3.png" width=800 height=200></img>
+</center>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -17294,8 +17701,9 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>是的，这就是容易出错的地方，违背我们直觉的地方，不过只要按照<strong>下面的说法</strong>来理解就不会出错了。</p>
 <ul>
-<li>在一个轴上使用<strong>布尔数组索引</strong><code>mask_array</code>，等价于在<strong>该轴上</strong>使用<code>np.nonzero(mask_array)</code>进行索引，即 使用<strong>整数数组索引</strong></li>
-<li>对于<strong>一维数组</strong> 使用<code>np.nonzero()</code> 还是会返回一个元素，第二个元素为空, 我们只需要第一个有用的元素。</li>
+<li>在索引中使用<strong>布尔数组索引</strong><code>mask_array</code>，等价于使用<code>np.nonzero(mask_array)</code>进行索引，即 使用<strong>整数数组索引</strong></li>
+<li>对于<strong>二维数组</strong> 使用<code>np.nonzero()</code> 返回一个元组，第一个元素为所有<strong>非0元素</strong>的<strong>行索引</strong>组成的一维向量，第二个元素则为所有<strong>非0元素</strong>的<strong>列索引</strong>组成的数组。</li>
+<li>对于<strong>一维数组</strong> 使用<code>np.nonzero()</code> 还是会返回一个元组，第二个元素为空, 这时只需要第一个有用的元素。</li>
 </ul>
 
 </div>
@@ -18031,7 +18439,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>举出几个不应该用<code>ndarray</code>的例子</p>
+<p>尽可能的使用<code>numpy</code>提供的运算函数或操作符，不要对一个数组进行迭代。</p>
 
 </div>
 </div>
