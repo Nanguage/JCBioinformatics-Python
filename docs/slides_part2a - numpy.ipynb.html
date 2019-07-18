@@ -1,13 +1,65 @@
+
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
+<head>
 
-<title>data_science</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+<title>part2a - numpy slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
+<!-- General and theme style sheets -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/simple.css" id="theme">
 
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
+
+</script>
+
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
+<![endif]-->
+
+<!-- Loading the mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration -->
+
+<!-- Get Font-awesome from cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -13060,62 +13112,136 @@ ul.typeahead-list  > li > a.pull-right {
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-body {
-  overflow: visible;
-  padding: 8px;
+.reveal {
+  font-size: 160%;
 }
-
-div#notebook {
-  overflow: visible;
-  border-top: none;
-}@media print {
-  div.cell {
-    display: block;
-    page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
-  }
-  div.output { 
-    display: block;
-    page-break-inside: avoid; 
-  }
+.reveal pre {
+  width: inherit;
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+.reveal pre code {
+  padding: 0px;
+}
+.reveal section img {
+  border: 0px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+}
+.reveal i {
+  font-style: normal;
+  font-family: FontAwesome;
+  font-size: 2em;
+}
+.reveal .slides {
+  text-align: left;
+}
+.reveal.fade {
+  opacity: 1;
+}
+.reveal .progress {
+  position: static;
+}
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #727272;
+}
+.reveal .controls .navigate-left.enabled:hover,
+.reveal .controls .navigate-left.enabled.enabled:hover {
+  border-right-color: #dfdfdf;
+}
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #727272;
+}
+.reveal .controls .navigate-right.enabled:hover,
+.reveal .controls .navigate-right.enabled.enabled:hover {
+  border-left-color: #dfdfdf;
+}
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #727272;
+}
+.reveal .controls .navigate-up.enabled:hover,
+.reveal .controls .navigate-up.enabled.enabled:hover {
+  border-bottom-color: #dfdfdf;
+}
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #727272;
+}
+.reveal .controls .navigate-down.enabled:hover,
+.reveal .controls .navigate-down.enabled.enabled:hover {
+  border-top-color: #dfdfdf;
+}
+.reveal .progress span {
+  background: #727272;
+}
+div.input_area {
+  padding: 0.06em;
+}
+div.code_cell {
+  background-color: transparent;
+}
+div.prompt {
+  width: 11ex;
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+  text-align: right;
+}
+div.output_area pre {
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+}
+div.output_prompt {
+  /* 5px right shift to account for margin in parent container */
+  margin: 5px 5px 0 0;
+}
+div.text_cell.rendered .rendered_html {
+  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
+  overflow-y: hidden;
+}
+a.anchor-link {
+  /* There is still an anchor, we are only hidding it */
+  display: none;
+}
+.rendered_html p {
+  text-align: inherit;
+}
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar *
+{
+  background:transparent;
+}
+::-webkit-scrollbar-thumb
+{
+  background: #727272 !important;
 }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
 
-<!-- Loading mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration --></head>
-<body>
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+</head>
 
+
+<body>
+
+
+<div class="reveal">
+<div class="slides">
+<section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># def plot_array(plt, shape=(1, 10), figsize=None, cmap=&#39;viridis&#39;, a=None):</span>
@@ -13145,6 +13271,32 @@ div#notebook {
 <span class="c1">#     plt.axis(&#39;off&#39;)</span>
 <span class="c1">#     #plt.title(&quot;{}-d array with shape {}&quot;.format(1 if array.shape[0] ==1 else 2,</span>
 <span class="c1">#     #                                                          array.shape))</span>
+
+
+<span class="k">def</span> <span class="nf">download_img</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">re</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span> <span class="nn">requests</span>
+    <span class="n">url_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;&#39;(?x)</span>
+<span class="s1">                            .*src=\\&quot;(.*?)\\&quot; .* #src=\&quot;url\&quot;</span>
+<span class="s1">                            | .*(https:.*(?:png|jpeg)).*       #https: </span>
+<span class="s1">                            | .*(http:.*(?:png|jpeg)).*&#39;&#39;&#39;</span><span class="p">)</span>    <span class="c1">#http:</span>
+    <span class="n">img_name_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;&#39;(?x)</span>
+<span class="s1">                            .*/(.*.png).*</span>
+<span class="s1">                            |.*/(.*.jpeg).*&#39;&#39;&#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">url_pattern</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">())):</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="n">url</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">i</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span> <span class="k">if</span> <span class="n">url</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">image_name</span> <span class="o">=</span> <span class="p">[</span> <span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">img_name_pattern</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>  <span class="k">if</span> <span class="n">name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">img</span><span class="p">:</span>
+                        <span class="n">img</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">image_name</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">plot_linspace</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span>  <span class="n">a2</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
@@ -13199,7 +13351,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/66728456-1b34-4959-b3f6-6d752e6566d2/640.jpeg" width=600 height=400></img>
+<img src="./img/0640.jpeg" width=600 height=400></img>
 </center>
 </div>
 </div>
@@ -13216,7 +13368,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/90fdf430-6175-4219-bc23-815467983dfa/640.jpeg" width=600 height=300></img>
+<img src="./img/1640.jpeg" width=600 height=300></img>
 </center>
 </div>
 </div>
@@ -13233,7 +13385,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/8d1005ba-90f9-4f6c-948a-fee4e0325202/640.jpeg" width=600 height=300></img>
+<img src="./img/2640.jpeg" width=600 height=300></img>
 </center>
 </div>
 </div>
@@ -13250,7 +13402,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/8bb580d3-e418-4205-ac2d-05cd2f8a212e/640.jpeg" width=600 height=300></img>
+<img src="./img/3640.jpeg" width=600 height=300></img>
 </center>
 </div>
 </div>
@@ -13313,7 +13465,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>&lt;/center&gt;
-<img src="https://github.com/zhqu1148980644/TMP/blob/master/images/ndarray_dipiction.png?raw=true" width=800 height=600></img>
+<img src="./img/4ndarray_dipiction.png" width=800 height=600></img>
 &lt;/center&gt;</p>
 
 </div>
@@ -13590,10 +13742,10 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/b1df245c-85ec-418c-8d7e-32b732a22353/640.png" width=400 height=200></img>
+<img src="./img/5640.png" width=400 height=200></img>
 </center>
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/866d0495-964f-4c61-a379-cc9d3f478b22/640.png" width=400 height=200></img>
+<img src="./img/6640.png" width=400 height=200></img>
 </center>
 </div>
 </div>
@@ -13719,13 +13871,13 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/c71d2f1f-b7df-41e0-aae0-ed811b457054/640.jpeg" width=590 height=200></img>
+<img src="./img/7640.jpeg" width=590 height=200></img>
 </center>
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/a4c1915b-2397-43c0-895d-c16010a5869e/640.jpeg" width=600 height=200></img>
+<img src="./img/8640.jpeg" width=600 height=200></img>
 </center>
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/47234f3a-c821-457e-8c37-2546f83c9faa/640.jpeg" width=700 height=200></img>
+<img src="./img/9640.jpeg" width=700 height=200></img>
 </center>
 </div>
 </div>
@@ -14324,7 +14476,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/b2a0fa7d-ef50-469c-a814-fd85832e1e10/640.png" width=590 height=200></img>
+<img src="./img/10640.png" width=590 height=200></img>
 </center>
 </div>
 </div>
@@ -14438,7 +14590,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/f2954780-ebc0-4385-9efd-8bd8973dbc43/640.png" width=590 height=200></img>
+<img src="./img/11640.png" width=590 height=200></img>
 </center>
 </div>
 </div>
@@ -14538,7 +14690,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://i.imgur.com/s9vWrGf.png" width=600 height=300></img>
+<img src="./img/array_slice.png" width=600 height=300></img>
 </center>
 </div>
 </div>
@@ -15049,7 +15201,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/4bacea03-1f4f-4db4-82de-5621db9d2420/640.png" width=600 height=300></img>
+<img src="./img/13640.png" width=600 height=300></img>
 </center>
 </div>
 </div>
@@ -15261,7 +15413,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/306f5315-d8cd-4d8c-a9f0-561e2e602c6a/640.png" width=400 height=200></img>
+<img src="./img/14640.png" width=400 height=200></img>
 </center>
 </div>
 </div>
@@ -15408,7 +15560,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://vrzkj25a871bpq7t1ugcgmn9-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/numpy-hstack-visual-example_v2.png" width=400 height=200></img>
+<img src="./img/15numpy-hstack-visual-example_v2.png" width=400 height=200></img>
 </center>
 </div>
 </div>
@@ -15716,7 +15868,7 @@ div#notebook {
 <h3 id="4.3-&#21028;&#26029;">4.3 &#21028;&#26029;<a class="anchor-link" href="#4.3-&#21028;&#26029;">&#182;</a></h3>
 </div>
 </div>
-</div>
+</div>> < != ==
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15748,7 +15900,7 @@ div#notebook {
 
 </div>
 </div>
-</div>
+</div>& &= | |= ~
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15768,7 +15920,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://image.jiqizhixin.com/uploads/editor/9938301b-2f26-4276-a73a-d184a8ae5744/640.jpeg" width=600 height=400></img>
+<img src="./img/16640.jpeg" width=600 height=400></img>
 </center>
 </div>
 </div>
@@ -16050,7 +16202,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://www.sharetechnote.com/image/EngMath_Matrix_EigenDecomposition_02.png" width=600 height=400></img>
+<img src="./img/17EngMath_Matrix_EigenDecomposition_02.png" width=600 height=400></img>
 </center>
 </div>
 </div>
@@ -16209,7 +16361,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://www.sharetechnote.com/image/EngMath_Matrix_SVD_01_2.png" width=600 height=400></img>
+<img src="./img/18EngMath_Matrix_SVD_01_2.png" width=600 height=400></img>
 </center>
 </div>
 </div>
@@ -16964,16 +17116,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>布尔索引数组</strong>的<strong>形状</strong>大小必须要与<strong>被索引数组</strong>的<strong>形状</strong>大小一致, 布尔数组中每个元素的<strong>布尔值</strong>决定了是否<strong>保留</strong>被索引数组中<strong>相对应位置</strong>的元素。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>注意: 和整数数组索引中的规则一样，由于存在<strong>广播</strong>的原因，<code>numpy</code>会自动的调整数组形状以满足该条件。</p>
-</blockquote>
+<p>由于<strong>布尔数组</strong>中每个元素的<strong>布尔值</strong>决定了是否<strong>保留</strong>被索引数组中<strong>相对应位置</strong>的元素。可以很自然的想到使用一个和被索引数组<strong>形状相同</strong>的数组进行<strong>索引</strong>。这种情况下以<strong>一维数组</strong>的形式返回所有<strong>保留下来</strong>(<code>True</code>)的元素。</p>
 
 </div>
 </div>
@@ -16988,7 +17131,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[285]:</div>
+<div class="prompt input_prompt">In&nbsp;[366]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
@@ -17011,7 +17154,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[285]:</div>
+    <div class="prompt output_prompt">Out[366]:</div>
 
 
 
@@ -17027,7 +17170,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[285]:</div>
+    <div class="prompt output_prompt">Out[366]:</div>
 
 
 
@@ -17043,7 +17186,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[285]:</div>
+    <div class="prompt output_prompt">Out[366]:</div>
 
 
 
@@ -17069,7 +17212,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>总之，将<strong>高级索引</strong>与<code>numpy</code>的<code>any(), nonzero() &gt; &lt; != &amp; | |= &amp;=</code>以及<code>where()</code>等一系列<strong>函数/操作符</strong>(生成<code>indices/mask</code>)相结合，可以很轻松、灵活的取得我们想要的元素。</p>
+<p>实际上，在一个轴上使用<strong>布尔数组索引</strong><code>mask_array</code>，等价于在<strong>该轴上</strong>使用<code>np.nonzero(mask_array)</code>即<strong>整数数组索引</strong>。</p>
+<ul>
+<li>必须要充分认识到这一点，不然有的时候可能会出错。</li>
+<li>尤其是当同时使用<strong>多个布尔数组</strong>的时候，如果没理解这点，就会出现意想不到的结果。</li>
+</ul>
 
 </div>
 </div>
@@ -17077,7 +17224,491 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="5-view&#21644;copy">5 <code>view</code>&#21644;<code>copy</code><a class="anchor-link" href="#5-view&#21644;copy">&#182;</a></h2>
+<p>举个例子： 下面我们要把<code>A</code>这个数组中的<strong>第2、4行</strong>，和<strong>第1、3列</strong>组成的子数组取出来(前面我们成功的使用<strong>整数数组索引</strong>做到了)。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[356]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">A</span>
+<span class="n">mask_array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+<span class="n">mask_array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+<span class="n">mask_array1</span>
+<span class="n">mask_array2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[356]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 1,  2,  3,  4],
+       [ 3,  4,  5,  6],
+       [ 6,  7,  8,  9],
+       [ 9, 10, 11, 12],
+       [ 3,  2,  1,  3]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[356]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([False,  True, False,  True, False])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[356]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ True, False,  True, False])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>在一个轴上使用：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>mask_array1</code>的大小一定要与<code>A</code>的<strong>第一个轴</strong>的长度相等，这很好理解</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[357]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">mask_array2</span><span class="p">]</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="n">A</span><span class="p">[</span><span class="n">mask_array1</span><span class="p">]</span>                          
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>boolean index did not match indexed array along dimension 0; dimension is 5 but corresponding boolean dimension is 4
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[357]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 3,  4,  5,  6],
+       [ 9, 10, 11, 12]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>很好，在意料之中, 让我们把<strong>第二个轴的索引</strong>也加上去：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[355]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="n">mask_array1</span><span class="p">,</span> <span class="n">mask_array2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[355]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 3, 11])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>欸，好像哪里不对劲，<strong>两个轴</strong>的索引上各有<strong>两个</strong><code>True</code>值啊, 不应该返回一个二维数组吗?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>是的，这就是容易出错的地方，违背我们直觉的地方，不过只要按照<strong>下面的说法</strong>来理解就不会出错了。</p>
+<ul>
+<li>在一个轴上使用<strong>布尔数组索引</strong><code>mask_array</code>，等价于在<strong>该轴上</strong>使用<code>np.nonzero(mask_array)</code>进行索引，即 使用<strong>整数数组索引</strong></li>
+<li>对于<strong>一维数组</strong> 使用<code>np.nonzero()</code> 还是会返回一个元素，第二个元素为空, 我们只需要第一个有用的元素。</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我们来验证下:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>还是先来试下只使用第一个<code>mask_array1</code>的情况(如果不能适应最简单的情况，那这说法肯定就是错的了):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[369]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">mask_array1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">A</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">mask_array1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">A</span><span class="p">[</span><span class="n">mask_array1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[369]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 3], dtype=int64)</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[369]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 3,  4,  5,  6],
+       [ 9, 10, 11, 12]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[369]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 3,  4,  5,  6],
+       [ 9, 10, 11, 12]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>还不错，确实是这么回事，再来试试之前结果出乎意料的<strong>索引方式</strong>(同时使用两个<strong>布尔数组</strong>)：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[368]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">mask_array1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">mask_array2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">A</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">mask_array1</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">mask_array2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">A</span><span class="p">[</span><span class="n">mask_array1</span><span class="p">,</span> <span class="n">mask_array2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[368]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 3], dtype=int64)</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[368]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0, 2], dtype=int64)</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[368]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 3, 11])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[368]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 3, 11])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>看，是不是一样的。只要使用上面的说法理解，就可以解释的通了。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>再来看我们最开始使用的索引方式(<strong>二维布尔数组</strong>)：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[374]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">A</span> <span class="o">!=</span> <span class="mi">1</span>
+<span class="n">mask</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="n">A</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">mask</span><span class="p">)]</span>
+<span class="n">A</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[374]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[False,  True,  True,  True],
+       [ True,  True,  True,  True],
+       [ True,  True,  True,  True],
+       [ True,  True,  True,  True],
+       [ True,  True, False,  True]])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[374]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4], dtype=int64),
+ array([1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 3], dtype=int64))</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[374]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 2,  3,  4,  3,  4,  5,  6,  6,  7,  8,  9,  9, 10, 11, 12,  3,  2,
+        3])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[374]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 2,  3,  4,  3,  4,  5,  6,  6,  7,  8,  9,  9, 10, 11, 12,  3,  2,
+        3])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>bingo! 还是说的通，并且这也解答了为什么当使用一个与<strong>被索引数组</strong>形状相同的<strong>布尔数组</strong>进行索引时，返回的是一个<strong>一维数组</strong>的问题。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="5.3-&#24635;&#32467;">5.3 &#24635;&#32467;<a class="anchor-link" href="#5.3-&#24635;&#32467;">&#182;</a></h3><p>总之，将<strong>高级索引</strong>与<code>numpy</code>的<code>any(), nonzero() &gt; &lt; != &amp; | |= &amp;=</code>以及<code>where()</code>等一系列<strong>函数/操作符</strong>(生成<code>indices/mask</code>)相结合，可以很轻松、灵活的取得我们想要的元素。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6-view&#21644;copy">6 <code>view</code>&#21644;<code>copy</code><a class="anchor-link" href="#6-view&#21644;copy">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -17097,7 +17728,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="6-Matrics&#21644;Sparse-Matrix(&#31232;&#30095;&#30697;&#38453;)">6 Matrics&#21644;Sparse Matrix(&#31232;&#30095;&#30697;&#38453;)<a class="anchor-link" href="#6-Matrics&#21644;Sparse-Matrix(&#31232;&#30095;&#30697;&#38453;)">&#182;</a></h2>
+<h2 id="7-Matrics&#21644;Sparse-Matrix(&#31232;&#30095;&#30697;&#38453;)">7 Matrics&#21644;Sparse Matrix(&#31232;&#30095;&#30697;&#38453;)<a class="anchor-link" href="#7-Matrics&#21644;Sparse-Matrix(&#31232;&#30095;&#30697;&#38453;)">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -17117,7 +17748,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="7-ndarray&#22312;&#20869;&#23384;&#20013;&#30340;&#20648;&#23384;&#26041;&#24335;">7 ndarray&#22312;&#20869;&#23384;&#20013;&#30340;&#20648;&#23384;&#26041;&#24335;<a class="anchor-link" href="#7-ndarray&#22312;&#20869;&#23384;&#20013;&#30340;&#20648;&#23384;&#26041;&#24335;">&#182;</a></h2>
+<h2 id="8-ndarray&#22312;&#20869;&#23384;&#20013;&#30340;&#20648;&#23384;&#26041;&#24335;">8 ndarray&#22312;&#20869;&#23384;&#20013;&#30340;&#20648;&#23384;&#26041;&#24335;<a class="anchor-link" href="#8-ndarray&#22312;&#20869;&#23384;&#20013;&#30340;&#20648;&#23384;&#26041;&#24335;">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -17194,7 +17825,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="7.1-&#20803;&#32032;&#22312;&#20869;&#23384;&#20013;&#30340;&#24067;&#23616;">7.1 &#20803;&#32032;&#22312;&#20869;&#23384;&#20013;&#30340;&#24067;&#23616;<a class="anchor-link" href="#7.1-&#20803;&#32032;&#22312;&#20869;&#23384;&#20013;&#30340;&#24067;&#23616;">&#182;</a></h3>
+<h3 id="8.1-&#20803;&#32032;&#22312;&#20869;&#23384;&#20013;&#30340;&#24067;&#23616;">8.1 &#20803;&#32032;&#22312;&#20869;&#23384;&#20013;&#30340;&#24067;&#23616;<a class="anchor-link" href="#8.1-&#20803;&#32032;&#22312;&#20869;&#23384;&#20013;&#30340;&#24067;&#23616;">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -17225,7 +17856,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://eli.thegreenplace.net/images/2015/row-major-2D.png" width=500 height=300></img>
+<img src="./img/19row-major-2D.png" width=500 height=300></img>
 </center>
 </div>
 </div>
@@ -17241,7 +17872,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>
-<img src="https://eli.thegreenplace.net/images/2015/column-major-2D.png" width=500 height=300></img>
+<img src="./img/20column-major-2D.png" width=500 height=300></img>
 </center>
 </div>
 </div>
@@ -17427,7 +18058,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="7.2-shape&#12289;dtype&#21644;strides">7.2 shape&#12289;dtype&#21644;strides<a class="anchor-link" href="#7.2-shape&#12289;dtype&#21644;strides">&#182;</a></h3>
+<h3 id="8.2-shape&#12289;dtype&#21644;strides">8.2 shape&#12289;dtype&#21644;strides<a class="anchor-link" href="#8.2-shape&#12289;dtype&#21644;strides">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -17519,7 +18150,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="7.3-&#23613;&#21487;&#33021;&#30340;&#20351;&#29992;vectorizing&#25805;&#20316;">7.3 &#23613;&#21487;&#33021;&#30340;&#20351;&#29992;vectorizing&#25805;&#20316;<a class="anchor-link" href="#7.3-&#23613;&#21487;&#33021;&#30340;&#20351;&#29992;vectorizing&#25805;&#20316;">&#182;</a></h3>
+<h3 id="8.3-&#23613;&#21487;&#33021;&#30340;&#20351;&#29992;vectorizing&#25805;&#20316;">8.3 &#23613;&#21487;&#33021;&#30340;&#20351;&#29992;vectorizing&#25805;&#20316;<a class="anchor-link" href="#8.3-&#23613;&#21487;&#33021;&#30340;&#20351;&#29992;vectorizing&#25805;&#20316;">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -17703,7 +18334,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>直接来看<code>sklearn</code>的官网截图，简洁明了的展示了<code>sklearn</code>是用来做什么的：</p>
 <center>
-<img src="https://github.com/zhqu1148980644/TMP/blob/master/images/sklearn_screenshot.png?raw=true" width=700 height=500></img>
+<img src="./img/21sklearn_screenshot.png" width=700 height=500></img>
 </center>
 </div>
 </div>
@@ -18145,25 +18776,86 @@ Confusion matrix:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[473]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
-</div>
     </div>
-  </div>
-</body>
+</div>
+</div>
 
- 
+</div></section></section>
+</div>
+</div>
+
+<script>
+
+require(
+    {
+      // it makes sense to wait a little bit when you are loading
+      // reveal from a cdn in a slow connection environment
+      waitSeconds: 15
+    },
+    [
+      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"
+    ],
+
+    function(head, Reveal){
+
+        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+
+            transition: "none",
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js",
+                  condition: function() { return !document.body.classList; } },
+                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js",
+                  async: true,
+                  condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+        var update = function(event){
+          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
+            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
+          }
+        };
+
+        Reveal.addEventListener('slidechanged', update);
+
+        function setScrollingSlide() {
+            var scroll = true
+            if (scroll === true) {
+              var h = $('.reveal').height() * 0.95;
+              $('section.present').find('section')
+                .filter(function() {
+                  return $(this).height() > h;
+                })
+                .css('height', 'calc(95vh)')
+                .css('overflow-y', 'scroll')
+                .css('margin-top', '20px');
+            }
+        }
+
+        // check and set the scrolling slide every time the slide change
+        Reveal.addEventListener('slidechanged', setScrollingSlide);
+
+    }
+
+);
+</script>
+
+</body>
 
 
 </html>
